@@ -1,0 +1,33 @@
+{
+  "name": "@docchi/scraping-anime-websites-poland",
+  "version": "1.0.1",
+  "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docchipl/Pobieranie-anime-z-polskich-stron.git"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jsdom": "^20.0.0",
+    "unraw": "^2.0.1"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/issues"
+  },
+  "homepage": "https://github.com/docchipl/Pobieranie-anime-z-polskich-stron#readme",
+  "keywords": [
+    "anime",
+    "poland",
+    "frrixysubs",
+    "okami-subs",
+    "miorosubs",
+    "maousubs",
+    "docchi",
+    "pl",
+    "napisy"
+  ],
+  "author": "3xanax",
+  "license": "MIT"
+}
