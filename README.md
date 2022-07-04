@@ -30,6 +30,8 @@ Obsługiwane strony:
 - Mioro-Subs
 - Okami-Subs
 - MaouSubs
+- DayidSub
+- NanaSubs
 
 Przykłd FrixySubs: 
 
@@ -43,7 +45,7 @@ console.log(await scopeAnime({
 }))
 ```
 <details>
-  <summary>Reszta</summary>
+  <summary><h2>Reszta</h2></summary>
 
 
   Okami-Subs: 
@@ -77,6 +79,28 @@ console.log(await scopeAnime({
     anime: '',
     episode: '1799',
     website: 'maousubs'
+  }))
+  ```
+  DayidSub: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 'Tensei-Kenja-no-Isekai-Life',
+    episode: '01',
+    website: 'dayidsub'
+  }))
+  ```
+  NanaSubs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 'engage-kiss',
+    episode: '855',
+    website: 'nanasubs'
   }))
   ```
 </details>
