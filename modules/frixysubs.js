@@ -19,7 +19,7 @@ function FrixySubs (anime, episode){
         episode_next_url: `/anime/${anime}/${Number(episode)+1}`
       })
     }).catch(err => {
-      console.log(err)
+      //console.log(err)
       return ({
           status: 500,
           message: "Something went wrong!"
