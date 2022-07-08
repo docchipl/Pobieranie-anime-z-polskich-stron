@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.3.1",
+  "version": "1.0.4",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
