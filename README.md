@@ -26,12 +26,13 @@ npm install @docchi/scraping-anime-websites-poland
 </sub>
 
 Obsługiwane strony: 
-- FrixySubs
-- Mioro-Subs
-- Okami-Subs
-- MaouSubs
-- DayidSub
-- NanaSubs
+- FrixySubs - **frixysubs.pl**
+- Mioro-Subs - **miorosubs.7m.pl**
+- Okami-Subs - **okami-subs.pl**
+- MaouSubs - **maousubs.pythonanywhere.com**
+- DayidSub - **dayidsub.pl**
+- NanaSubs - **nanasubs.pl**
+- Fumetsu - **fumetsu.pl**
 
 Przykłd FrixySubs: 
 
@@ -45,7 +46,7 @@ console.log(await scopeAnime({
 }))
 ```
 <details>
-  <summary><h2>Reszta</h2></summary>
+  <summary>Reszta</summary>
 
 
   Okami-Subs: 
@@ -101,6 +102,17 @@ console.log(await scopeAnime({
     anime: 'engage-kiss',
     episode: '855',
     website: 'nanasubs'
+  }))
+  ```
+  Fumetsu: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 'TatenoYuushanoNariagari2-kiss',
+    episode: '1',
+    website: 'fumetsu'
   }))
   ```
 </details>

@@ -1,4 +1,4 @@
-import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs} from "./modules/index.js";
+import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu} from "./modules/index.js";
 
 function scopeAnime({anime, episode, website}){
 
@@ -21,6 +21,9 @@ function scopeAnime({anime, episode, website}){
         break;
       case 'nanasubs':
         data = NanaSubs(anime, episode);
+        break;
+      case 'fumetsu':
+        data = Fumetsu(anime, episode);
         break;
       default:
         data = {
