@@ -8,9 +8,9 @@ virtualConsole.on("error", () => {
 });
 
 function MaouSubs (episode){
-    const request = axios.get(`https://maousubs.pythonanywhere.com/video/${episode}`, {
+    const request = axios.get(`https://maousubs.pythonanywhere.com/episode/${episode}`, {
         headers: {
-          Referer: `https://maousubs.pythonanywhere.com/video/${episode}`,
+          Referer: `https://maousubs.pythonanywhere.com/episode/${episode}`,
           'X-Requested-With': 'XMLHttpRequest'
         }
       }).then(function (response) {
@@ -40,6 +40,7 @@ function MaouSubs (episode){
         return ({
           status: 200, 
           message: "Success",
+          episode_number: episodeNumber,
           episode_url: episode_url_cleaning,
           episode_next_url: episode_next_url
         })

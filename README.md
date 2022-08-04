@@ -26,7 +26,7 @@ npm install @docchi/scraping-anime-websites-poland
 </sub>
 
 Obsługiwane strony: 
-- FrixySubs - **frixysubs.pl**
+- ~~FrixySubs - **frixysubs.pl**~~
 - Mioro-Subs - **miorosubs.7m.pl**
 - Okami-Subs - **okami-subs.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
@@ -78,7 +78,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: '',
-    episode: '1799',
+    episode: 'yofukashi-no-uta-4',
     website: 'maousubs'
   }))
   ```

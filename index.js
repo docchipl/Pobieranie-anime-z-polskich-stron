@@ -4,9 +4,9 @@ function scopeAnime({anime, episode, website}){
 
     let data;
     switch (website) {
-      case 'frixysubs':
+      /*case 'frixysubs':
         data = FrixySubs(anime, episode);
-        break;
+        break;*/
       case 'okamisubs':
         data = OkamiSubs(anime, episode);
         break;

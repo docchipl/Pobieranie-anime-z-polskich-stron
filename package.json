@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
@@ -25,6 +25,8 @@
     "miorosubs",
     "maousubs",
     "docchi",
+    "fumetsu",
+    "nanasubs",
     "pl",
     "napisy"
   ],
