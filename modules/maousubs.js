@@ -32,7 +32,7 @@ function MaouSubs (episode){
           const episodeN = Number(episodes[y].textContent.replace('Odcinek:', ''));
 
           if(episodeN === episodeNumber+1){
-            episode_next_url = episodes[y].querySelector('a').href.replace('/video/', '');
+            episode_next_url = episodes[y].querySelector('a').href.replace('/episode/', '');
           }
 
         }
