@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as jsdom from 'jsdom';
+import { AnimeSubsApiResponse } from '../interfaces';
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
@@ -7,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-function MaouSubs(episode: string) {
+function MaouSubs(episode: string): Promise<AnimeSubsApiResponse> {
   const request = axios
     .get(`https://maousubs.pythonanywhere.com/episode/${episode}`, {
       headers: {
@@ -18,7 +19,7 @@ function MaouSubs(episode: string) {
     .then(function (response) {
       const dom = new JSDOM(response.data, { virtualConsole });
       const episodeNumber = Number(
-        dom.window.document.querySelector('h3#postdata .mobile-text-long')?.textContent?.replace('Odcinek:', ''),
+        dom.window.document.querySelector('h3#postdata .mobile-text-long')!.textContent!.replace('Odcinek:', ''),
       );
       const items = dom.window.document.querySelectorAll('#btn-PLCGMDM');
       let episode_url_cleaning = [];
@@ -33,10 +34,10 @@ function MaouSubs(episode: string) {
       }
 
       for (var y = 0; y < episodes.length; ++y) {
-        const episodeN = Number(episodes[y].textContent?.replace('Odcinek:', ''));
+        const episodeN = Number(episodes[y].textContent!.replace('Odcinek:', ''));
 
         if (episodeN === episodeNumber + 1) {
-          episode_next_url = episodes[y].querySelector('a')?.href.replace('/episode/', '');
+          episode_next_url = episodes[y].querySelector('a')!.href.replace('/episode/', '');
         }
       }
 
