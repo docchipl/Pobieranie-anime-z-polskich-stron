@@ -2,7 +2,16 @@
   "name": "@docchi/scraping-anime-websites-poland",
   "version": "1.0.7",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/docchipl/Pobieranie-anime-z-polskich-stron.git"
@@ -31,5 +40,12 @@
     "napisy"
   ],
   "author": "3xanax",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsdom": "^20.0.0",
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.8.3"
+  }
 }
