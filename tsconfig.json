@@ -5,7 +5,7 @@
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
-    "rootDir": "src/modules",
+    "rootDir": "src",
     "baseUrl": ".",
   },
   "exclude": [".git", "node_modules", "coverage", "config", "build", "dist"]

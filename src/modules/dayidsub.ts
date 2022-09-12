@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as jsdom from 'jsdom';
+import { AnimeSubsApiResponse } from '../interfaces';
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
@@ -7,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-function DayidSub(anime: string, episode: string) {
+function DayidSub(anime: string, episode: string): Promise<AnimeSubsApiResponse> {
   const request = axios
     .get(`https://dayidsub.pl/${anime}/episode${episode}`, {
       headers: {
