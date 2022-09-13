@@ -11,7 +11,13 @@ virtualConsole.on('error', () => {
 
 const DayidSub = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
-    const { data } = await new AxiosClient(`https://dayidsub.pl/${anime}/episode${episode}`).get<string>();
+    const baseURL = `https://dayidsub.pl/${anime}/episode${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<string>({
+      headers: {
+        Referer: baseURL,
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    });
     const dom = new JSDOM(data, { virtualConsole });
 
     let episode_url_cleaning;

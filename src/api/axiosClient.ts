@@ -1,4 +1,4 @@
-import axios, { Axios } from 'axios';
+import axios, { Axios, AxiosRequestConfig } from 'axios';
 
 export class AxiosClient {
   private client: Axios;
@@ -6,14 +6,10 @@ export class AxiosClient {
     this.client = axios.create({
       baseURL: this.baseUrl,
       timeout: 2000,
-      headers: {
-        Referer: baseUrl,
-        'X-Requested-With': 'XMLHttpRequest',
-      },
     });
   }
 
-  async get<T>() {
-    return await this.client.get<T>(this.baseUrl);
+  async get<T>(config?: AxiosRequestConfig) {
+    return await this.client.get<T>(this.baseUrl, config);
   }
 }

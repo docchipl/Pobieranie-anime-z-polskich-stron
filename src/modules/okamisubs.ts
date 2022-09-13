@@ -10,7 +10,8 @@ virtualConsole.on('error', () => {
 
 const OkamiSubs = async (anime: string, episode: string) => {
   try {
-    const { data } = await axios.get(`https://okami-subs.pl/anime/${anime}/odcinek/${episode}`);
+    const baseURL = `https://okami-subs.pl/anime/${anime}/odcinek/${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<string>();
     const dom = new JSDOM(data, { virtualConsole });
 
     const episode_cleaning = JSON.parse(

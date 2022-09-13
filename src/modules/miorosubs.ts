@@ -11,7 +11,13 @@ virtualConsole.on('error', () => {
 
 const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
-    const { data } = await new AxiosClient(`https://miorosubs.7m.pl/${anime}-${episode}`).get<string>();
+    const baseURL = `https://miorosubs.7m.pl/${anime}-${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<string>({
+      headers: {
+        Referer: baseURL,
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    });
     const dom = new JSDOM(data, { virtualConsole });
 
     let episode_cleaning: AnimeSubsEpisode[] = [];

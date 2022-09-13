@@ -11,7 +11,13 @@ virtualConsole.on('error', () => {
 
 const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
   try {
-    const { data } = await new AxiosClient(`https://maousubs.pythonanywhere.com/episode/${episode}`).get<string>();
+    const baseURL = `https://maousubs.pythonanywhere.com/episode/${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<string>({
+      headers: {
+        Referer: baseURL,
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    });
     const dom = new JSDOM(data, { virtualConsole });
     const episodeNumber = Number(
       dom.window.document.querySelector('h3#postdata .mobile-text-long')!.textContent!.replace('Odcinek:', ''),

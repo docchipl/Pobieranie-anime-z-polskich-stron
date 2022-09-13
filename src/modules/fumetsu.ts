@@ -11,7 +11,13 @@ virtualConsole.on('error', () => {
 
 const FumetsuSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
-    const { data } = await new AxiosClient(`https://fumetsu.pl/anime/${anime}/${episode}`).get<string>();
+    const baseURL = `https://fumetsu.pl/anime/${anime}/${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<string>({
+      headers: {
+        Referer: baseURL,
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    });
     const dom = new JSDOM(data, { virtualConsole });
     let episode_cleaning: AnimeSubsEpisode[] = [];
     const items = dom.window.document.querySelectorAll('.video_cont iframe');
