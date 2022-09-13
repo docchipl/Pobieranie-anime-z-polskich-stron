@@ -1,61 +1,30 @@
-import axios from 'axios';
-import * as jsdom from 'jsdom';
+import { AxiosClient } from '../api';
 import { AnimeSubsApiResponse } from '../interfaces';
 
-const { JSDOM } = jsdom;
-const virtualConsole = new jsdom.VirtualConsole();
-virtualConsole.on('error', () => {
-  // No-op to skip console errors.
-});
-
-function FrixySubs(anime: string, episode: string): Promise<AnimeSubsApiResponse> {
-  const request = axios
-    .get(`https://frixysubs.pl/anime/${anime}/${episode}`, {
+const FrixySubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+  try {
+    const baseURL = `https://frixysubs.pl/api/anime/${anime}/${episode}`;
+    const { data } = await new AxiosClient(baseURL).get<any>({
       headers: {
-        Referer: `https://frixysubs.pl/anime/${anime}/${episode}`,
-        'X-Requested-With': 'XMLHttpRequest',
+        Accept: `application/json`,
       },
-    })
-    .then(function (response) {
-      const dom = new JSDOM(response.data, { virtualConsole });
-      const items = (
-        dom.window.document.querySelector(
-          '.v-responsive__content div.v-card__text.fill-height iframe',
-        ) as HTMLVideoElement
-      )?.src;
-      let episode_url_cleaning = [];
-
-      const url = new URL(items);
-      if (url.host.split('.').length === 3) {
-        episode_url_cleaning.push({
-          player: url.host
-            .replace(/^[^.]+\./g, '')
-            .split('.')[0]
-            .toUpperCase(),
-          url: items,
-        });
-      } else {
-        episode_url_cleaning.push({
-          player: url.host.split('.')[0].toUpperCase(),
-          url: items,
-        });
-      }
-
-      return {
-        status: 200,
-        message: 'Success',
-        episode_url: episode_url_cleaning,
-        episode_next_url: `${Number(episode) + 1}`,
-      };
-    })
-    .catch((err) => {
-      //console.log(err)
-      return {
-        status: 500,
-        message: 'Something went wrong!',
-      };
     });
-
-  return request;
-}
+    return {
+      status: 200,
+      message: 'Success',
+      episodes: data.episode.players.map((episode: any) => {
+        return {
+          player: episode.name,
+          url: episode.link,
+        };
+      }),
+      episode_next_url: `https://frixysubs.pl/api/anime/${anime}/${episode + 1}`,
+    };
+  } catch {
+    return {
+      status: 500,
+      message: 'Something went wrong!',
+    };
+  }
+};
 export default FrixySubs;
