@@ -29,7 +29,7 @@ function MioroSubs (anime, episode){
           status: 200, 
           message: "Success",
           episode_url: episode_url_cleaning,
-          episode_next_url: `${Number(episode)+1}`
+          episode_next_url: Number(episode)+1
         })
       }).catch(err => {
         //console.log(err)

@@ -31,7 +31,7 @@ function NanaSubs (anime, episode){
           status: 200, 
           message: "Success",
           episode_url: episode_url_cleaning,
-          episode_next_url: episode >= episode_next_url ? ( null ):( episode_next_url )
+          episode_next_url: episode >= episode_next_url ? ( null ):( Number(episode_next_url) )
         })
       }).catch(err => {
         //console.log(err)

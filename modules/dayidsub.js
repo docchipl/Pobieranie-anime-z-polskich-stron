@@ -42,7 +42,7 @@ function DayidSub (anime, episode){
           status: 200, 
           message: "Success",
           episode_url: episode_url_cleaning,
-          episode_next_url: next_url === ":#" ? ( null ) : ( next_url )
+          episode_next_url: next_url === ":#" ? ( null ) : ( Number(next_url) )
         })
       }).catch(err => {
         //console.log(err)

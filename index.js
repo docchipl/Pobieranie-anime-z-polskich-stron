@@ -1,12 +1,12 @@
-import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu} from "./modules/index.js";
+import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs} from "./modules/index.js";
 
 function scopeAnime({anime, episode, website}){
 
     let data;
     switch (website) {
-      /*case 'frixysubs':
+      case 'frixysubs':
         data = FrixySubs(anime, episode);
-        break;*/
+        break;
       case 'okamisubs':
         data = OkamiSubs(anime, episode);
         break;
@@ -24,6 +24,10 @@ function scopeAnime({anime, episode, website}){
         break;
       case 'fumetsu':
         data = Fumetsu(anime, episode);
+        break;
+      case 'docchi':
+      case 'docchisubs':
+        data = DocchiSubs(anime, episode);
         break;
       default:
         data = {

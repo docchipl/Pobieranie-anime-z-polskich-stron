@@ -2,7 +2,7 @@
 
 Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/992855317647982592/Group_3.png)
+![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1019238100339269733/Docchi_1.png)
 
 ## Kontakt
 
@@ -26,7 +26,8 @@ npm install @docchi/scraping-anime-websites-poland
 </sub>
 
 Obsługiwane strony: 
-- ~~FrixySubs - **frixysubs.pl**~~
+- FrixySubs - **frixysubs.pl**
+- DocchiSubs - **docchi.pl**
 - Mioro-Subs - **miorosubs.7m.pl**
 - Okami-Subs - **okami-subs.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
@@ -48,7 +49,17 @@ console.log(await scopeAnime({
 <details>
   <summary>Reszta</summary>
 
+  DocchiSubs: 
 
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 'isekai-yakkyoku-49438',
+    episode: '5',
+    website: 'docchi'
+  }))
+  ```
   Okami-Subs: 
 
   ```js

@@ -14,7 +14,7 @@ function OkamiSubs (anime, episode){
         let episode_next_url;
 
         if(dom.window.document.querySelector('.col-md-4.col-xs-12 .button.pull-right')){
-          episode_next_url = dom.window.document.querySelector('.col-md-4.col-xs-12 .button.pull-right').href;
+          episode_next_url = dom.window.document.querySelector('.col-md-4.col-xs-12 .button.pull-right').href.split("/").pop();
         }else{
           episode_next_url = null;
         }
