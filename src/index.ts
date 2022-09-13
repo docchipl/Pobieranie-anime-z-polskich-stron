@@ -1,28 +1,28 @@
-import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu } from './modules/index.js';
+import { AvailableSubs } from './enums';
+import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu } from './modules';
 
-function scopeAnime({ anime, episode, website }: { anime: string; episode: string; website: string }) {
+function scopeAnime({ anime, episode, website }: { anime: string; episode: string; website: AvailableSubs }) {
   let data;
-  website = website.toLowerCase();
   switch (website) {
     /*case 'frixysubs':
         data = FrixySubs(anime, episode);
         break;*/
-    case 'okamisubs':
+    case AvailableSubs.OkamiSubs:
       data = OkamiSubs(anime, episode);
       break;
-    case 'miorosubs':
+    case AvailableSubs.MioroSubs:
       data = MioroSubs(anime, episode);
       break;
-    case 'maousubs':
+    case AvailableSubs.MaouSubs:
       data = MaouSubs(episode);
       break;
-    case 'dayidsub':
+    case AvailableSubs.DayidSub:
       data = DayidSub(anime, episode);
       break;
-    case 'nanasubs':
+    case AvailableSubs.NanaSubs:
       data = NanaSubs(anime, episode);
       break;
-    case 'fumetsu':
+    case AvailableSubs.FumetsuSubs:
       data = Fumetsu(anime, episode);
       break;
     default:
