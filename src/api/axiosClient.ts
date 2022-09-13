@@ -5,7 +5,7 @@ export class AxiosClient {
   constructor(private baseUrl: string) {
     this.client = axios.create({
       baseURL: this.baseUrl,
-      timeout: 1000,
+      timeout: 2000,
       headers: {
         Referer: baseUrl,
         'X-Requested-With': 'XMLHttpRequest',

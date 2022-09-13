@@ -31,13 +31,13 @@ const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
       });
     });
 
-    for (var y = 0; y < episodes.length; ++y) {
-      const episodeN = Number(episodes[y].textContent!.replace('Odcinek:', ''));
+    episodes.forEach((episode) => {
+      const episodeN = Number(episode.textContent!.replace('Odcinek:', ''));
 
       if (episodeN === episodeNumber + 1) {
-        episode_next_url = episodes[y].querySelector('a')!.href.replace('/episode/', '');
+        episode_next_url = episode.querySelector('a')!.href.replace('/episode/', '');
       }
-    }
+    });
 
     return {
       status: 200,

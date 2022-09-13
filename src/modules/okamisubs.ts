@@ -10,8 +10,9 @@ virtualConsole.on('error', () => {
 
 const OkamiSubs = async (anime: string, episode: string) => {
   try {
-    const { data } = await new AxiosClient(`https://okami-subs.pl/anime/${anime}/odcinek/${episode}`).get<string>();
+    const { data } = await axios.get(`https://okami-subs.pl/anime/${anime}/odcinek/${episode}`);
     const dom = new JSDOM(data, { virtualConsole });
+
     const episode_cleaning = JSON.parse(
       '[' + dom.window.document.getElementsByTagName('script')[4].textContent!.match(/\[(.+)\]/)![1] + ']',
     );
@@ -31,7 +32,6 @@ const OkamiSubs = async (anime: string, episode: string) => {
         url: x.url,
       };
     });
-
     return {
       status: 200,
       message: 'Success',
