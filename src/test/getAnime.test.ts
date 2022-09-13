@@ -4,8 +4,8 @@ import { AvailableSubs } from '../enums';
 describe('Getting anime from subs', () => {
   test('should return anime from OkamiSubs', async () => {
     const data = await scopeAnime({
-      anime: 'baraou-no-souretsu',
-      episode: '2-1007c078-b20b-4c62-888a-e5b20a2e720b',
+      anime: 'engage-kiss',
+      episode: '1-684d2fa7-5cc8-4dc2-9f4a-bec2726770dc',
       website: AvailableSubs.OkamiSubs,
     });
     expect(data.status).toBe(200);
@@ -43,6 +43,15 @@ describe('Getting anime from subs', () => {
       anime: 'AzurLane',
       episode: '0',
       website: AvailableSubs.FumetsuSubs,
+    });
+    expect(data.status).toBe(200);
+  });
+
+  test('should return anime from MaouSubs', async () => {
+    const data = await scopeAnime({
+      anime: '',
+      episode: 'yofukashi-no-uta-4',
+      website: AvailableSubs.MaouSubs,
     });
     expect(data.status).toBe(200);
   });
