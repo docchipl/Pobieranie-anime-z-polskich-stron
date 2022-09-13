@@ -9,11 +9,15 @@ const FrixySubs = async (anime: string, episode: string): Promise<AnimeSubsApiRe
         Accept: `application/json`,
       },
     });
-
     return {
       status: 200,
       message: 'Success',
-      episodes: data.episode.players,
+      episodes: data.episode.players.map((episode: any) => {
+        return {
+          player: episode.name,
+          url: episode.link,
+        };
+      }),
       episode_next_url: `https://frixysubs.pl/api/anime/${anime}/${episode + 1}`,
     };
   } catch {
