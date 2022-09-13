@@ -8,6 +8,7 @@
     "dist/**/*"
   ],
   "scripts": {
+    "prepublish": "tsc",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
