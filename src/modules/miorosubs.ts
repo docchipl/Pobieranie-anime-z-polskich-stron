@@ -36,7 +36,7 @@ const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiRe
     return {
       status: 200,
       message: 'Success',
-      episode: episode_cleaning,
+      episodes: episode_cleaning,
       episode_next_url: `${Number(episode) + 1}`,
     };
   } catch {

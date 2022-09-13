@@ -6,4 +6,5 @@ export enum AvailableSubs {
   NanaSubs = 'NanaSubs',
   FumetsuSubs = 'FumetsuSubs',
   FrixySubs = 'FrixySubs',
+  DocchiSubs = 'DocchiSubs',
 }

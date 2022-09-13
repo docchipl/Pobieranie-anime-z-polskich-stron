@@ -44,7 +44,7 @@ const NanaSubs = async (anime: string, episode: string): Promise<AnimeSubsApiRes
     return {
       status: 200,
       message: 'Success',
-      episode: episode_cleaning,
+      episodes: episode_cleaning,
       episode_next_url: episode >= episode_next_url ? null : episode_next_url,
     };
   } catch {

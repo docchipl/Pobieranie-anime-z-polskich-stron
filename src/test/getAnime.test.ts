@@ -11,6 +11,24 @@ describe('Getting anime from subs', () => {
     expect(data.status).toBe(200);
   });
 
+  test('should return anime from DocchiSubs', async () => {
+    const data = await scopeAnime({
+      anime: 'isekai-yakkyoku-49438',
+      episode: '5',
+      website: AvailableSubs.DocchiSubs,
+    });
+    expect(data.status).toBe(200);
+  });
+
+  test('should return anime from FrixySubs', async () => {
+    const data = await scopeAnime({
+      anime: 'spy-x-family',
+      episode: '1',
+      website: AvailableSubs.FrixySubs,
+    });
+    expect(data.status).toBe(200);
+  });
+
   test('should return anime from MioroSubs', async () => {
     const data = await scopeAnime({
       anime: 'summertime-render-odcinek',

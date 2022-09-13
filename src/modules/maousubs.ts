@@ -48,7 +48,7 @@ const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
     return {
       status: 200,
       message: 'Success',
-      episode: episode_cleaning,
+      episodes: episode_cleaning,
       episode_next_url: episode_next_url,
     };
   } catch {

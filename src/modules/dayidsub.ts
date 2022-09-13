@@ -51,7 +51,7 @@ const DayidSub = async (anime: string, episode: string): Promise<AnimeSubsApiRes
     return {
       status: 200,
       message: 'Success',
-      episode: episode_url_cleaning,
+      episodes: episode_url_cleaning,
       episode_next_url: next_url === ':#' ? null : next_url,
     };
   } catch {

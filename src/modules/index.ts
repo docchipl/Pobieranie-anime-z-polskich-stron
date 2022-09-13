@@ -5,3 +5,4 @@ export { default as MaouSubs } from './maousubs';
 export { default as DayidSub } from './dayidsub';
 export { default as NanaSubs } from './nanasubs';
 export { default as Fumetsu } from './fumetsu';
+export { default as DocchiSubs } from './docchi';

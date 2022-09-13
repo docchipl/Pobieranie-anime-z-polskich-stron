@@ -1,7 +1,7 @@
 export interface AnimeSubsApiResponse {
   status: number;
   message: string;
-  episode?: AnimeSubsEpisode[] | null;
+  episodes?: AnimeSubsEpisode[] | null;
   episode_next_url?: string | null;
 }
 

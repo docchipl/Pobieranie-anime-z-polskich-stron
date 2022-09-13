@@ -1,5 +1,5 @@
 import { AvailableSubs } from './enums';
-import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu } from './modules';
+import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs } from './modules';
 
 export interface IScopeAnime {
   anime: string;
@@ -10,9 +10,12 @@ export interface IScopeAnime {
 const scopeAnime = ({ anime, episode, website }: IScopeAnime) => {
   let data;
   switch (website) {
-    /*case 'frixysubs':
-        data = FrixySubs(anime, episode);
-        break;*/
+    case AvailableSubs.FrixySubs:
+      data = FrixySubs(anime, episode);
+      break;
+    case AvailableSubs.DocchiSubs:
+      data = DocchiSubs(anime, episode);
+      break;
     case AvailableSubs.OkamiSubs:
       data = OkamiSubs(anime, episode);
       break;
