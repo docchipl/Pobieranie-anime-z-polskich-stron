@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as jsdom from 'jsdom';
 import { AnimeSubsApiResponse, AnimeSubsEpisode } from '../interfaces';
-import { AxiosClient } from './axiosClient';
+import { AxiosClient } from '../api/axiosClient';
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
