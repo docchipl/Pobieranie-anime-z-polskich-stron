@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as jsdom from 'jsdom';
 import { AnimeSubsApiResponse, AnimeSubsEpisode } from '../interfaces';
 import { AxiosClient } from '../api/axiosClient';
@@ -9,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
+export const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://maousubs.pythonanywhere.com/episode/${episode}`;
     const { data } = await new AxiosClient(baseURL).get<string>({
@@ -58,4 +57,3 @@ const MaouSubs = async (episode: string): Promise<AnimeSubsApiResponse> => {
     };
   }
 };
-export default MaouSubs;

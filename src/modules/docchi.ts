@@ -13,7 +13,7 @@ interface DocchiResponse {
   translator_url: string;
 }
 
-const DocchiSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+export const DocchiSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://api.docchi.pl/api/episodes/find/${anime}/${episode}`;
     const { data } = await new AxiosClient(baseURL).get<DocchiResponse[]>({
@@ -40,4 +40,3 @@ const DocchiSubs = async (anime: string, episode: string): Promise<AnimeSubsApiR
     };
   }
 };
-export default DocchiSubs;
