@@ -12,7 +12,7 @@ virtualConsole.on('error', () => {
 const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://miorosubs.7m.pl/${anime}-${episode}`;
-    const { data } = await new AxiosClient(baseURL).get<string>({
+    const { data } = await new AxiosClient(baseURL, 6000).get<string>({
       headers: {
         Referer: baseURL,
         'X-Requested-With': 'XMLHttpRequest',
@@ -32,14 +32,14 @@ const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiRe
         url,
       });
     });
-
     return {
       status: 200,
       message: 'Success',
       episodes: episode_cleaning,
       episode_next_url: `${Number(episode) + 1}`,
     };
-  } catch {
+  } catch (error) {
+    console.error(error);
     return {
       status: 500,
       message: 'Something went wrong!',
