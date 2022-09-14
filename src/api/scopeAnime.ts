@@ -1,8 +1,8 @@
-import { AvailableSubs } from './enums';
-import { AnimeSubsApiResponse, IScopeAnime } from './interfaces';
-import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs } from './modules';
+import { AvailableSubs } from '../enums';
+import { AnimeSubsApiResponse, IScopeAnime } from '../interfaces';
+import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs } from '../modules';
 
-const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<AnimeSubsApiResponse> => {
+export const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<AnimeSubsApiResponse> => {
   let data;
   switch (website) {
     case AvailableSubs.FrixySubs:
@@ -38,5 +38,3 @@ const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<Ani
 
   return data;
 };
-
-export default scopeAnime;

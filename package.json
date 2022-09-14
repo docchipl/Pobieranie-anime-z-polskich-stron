@@ -3,16 +3,17 @@
   "version": "2.0.0-alpha.0",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
     "prepublish": "tsc",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "packing": "rm -rf ./dist && npx tsc && npm pack"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,6 @@
     "nock": "^13.2.9",
     "unraw": "^2.0.1"
   },
-  "type": "module",
   "bugs": {
     "url": "https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/issues"
   },
