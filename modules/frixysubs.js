@@ -12,7 +12,12 @@ function FrixySubs (anime, episode){
       return ({
         status: 200, 
         message: "Success",
-        episode_url: response.data.episode.players,
+        episode_url: response.data.episode.players.map(function(x) {
+          return({
+            player: x.name,
+            url: x.link
+          })
+        }),
         episode_next_url: Number(episode)+1
       })
 

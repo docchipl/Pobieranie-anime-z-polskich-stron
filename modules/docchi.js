@@ -10,7 +10,12 @@ function DocchiSubs (anime, episode){
       return ({
         status: 200, 
         message: "Success",
-        episode_url: response.data,
+        episode_url: response.data.map(function(x) {
+          return({
+            player: x.player_hosting,
+            url: x.player
+          })
+        }),
         episode_next_url: Number(episode)+1
       })
 

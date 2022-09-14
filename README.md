@@ -151,7 +151,7 @@ Wiadomość zwrotna
           "url": "https://ebd.cda.pl/620x395/105541522d" 
       }
     ],
-    "episode_next_url": "/anime/spy-x-family/2"
+    "episode_next_url": 2
 }
 ```
 # Kody zwrotne
