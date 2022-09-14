@@ -1,4 +1,5 @@
 import { AvailableSubs } from './enums';
+import { AnimeSubsApiResponse } from './interfaces';
 import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs } from './modules';
 
 export interface IScopeAnime {
@@ -7,32 +8,32 @@ export interface IScopeAnime {
   website: AvailableSubs;
 }
 
-const scopeAnime = ({ anime, episode, website }: IScopeAnime) => {
+const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<AnimeSubsApiResponse> => {
   let data;
   switch (website) {
     case AvailableSubs.FrixySubs:
-      data = FrixySubs(anime, episode);
+      data = await FrixySubs(anime, episode);
       break;
     case AvailableSubs.DocchiSubs:
-      data = DocchiSubs(anime, episode);
+      data = await DocchiSubs(anime, episode);
       break;
     case AvailableSubs.OkamiSubs:
-      data = OkamiSubs(anime, episode);
+      data = await OkamiSubs(anime, episode);
       break;
     case AvailableSubs.MioroSubs:
-      data = MioroSubs(anime, episode);
+      data = await MioroSubs(anime, episode);
       break;
     case AvailableSubs.MaouSubs:
-      data = MaouSubs(episode);
+      data = await MaouSubs(episode);
       break;
     case AvailableSubs.DayidSub:
-      data = DayidSub(anime, episode);
+      data = await DayidSub(anime, episode);
       break;
     case AvailableSubs.NanaSubs:
-      data = NanaSubs(anime, episode);
+      data = await NanaSubs(anime, episode);
       break;
     case AvailableSubs.FumetsuSubs:
-      data = Fumetsu(anime, episode);
+      data = await Fumetsu(anime, episode);
       break;
     default:
       data = {
