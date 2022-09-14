@@ -14,11 +14,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 📚 checkout
-              uses: actions/checkout@v3.0.2
+              uses: actions/checkout@v3
             - name: 🟢 node
-              uses: actions/setup-node@v3.4.1
+              uses: actions/setup-node@v3
               with:
-                  node-version: 12
+                  node-version: '16.x'
                   registry-url: https://registry.npmjs.org
             - name: 🚀 publish
               run: npm publish --access public
