@@ -2,6 +2,10 @@ import scopeAnime from '..';
 import { AvailableSubs } from '../enums';
 
 describe('Getting anime from subs', () => {
+  beforeAll(() => {
+    jest.setTimeout(10000);
+  });
+
   test('should return anime from OkamiSubs', async () => {
     const data = await scopeAnime({
       anime: 'engage-kiss',

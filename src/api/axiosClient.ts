@@ -2,10 +2,10 @@ import axios, { Axios, AxiosRequestConfig } from 'axios';
 
 export class AxiosClient {
   private client: Axios;
-  constructor(private baseUrl: string) {
+  constructor(private baseUrl: string, private timeout: number = 2000) {
     this.client = axios.create({
       baseURL: this.baseUrl,
-      timeout: 2000,
+      timeout: this.timeout,
     });
   }
 
