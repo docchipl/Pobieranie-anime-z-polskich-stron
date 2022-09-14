@@ -1,2 +1,2 @@
 export * from './axiosClient';
-export * from './scopeAnime';
+export * from '../scopeAnime';
