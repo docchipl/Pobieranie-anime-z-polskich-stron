@@ -1,5 +1,5 @@
-import scopeAnime from '..';
 import { AvailableSubs } from '../enums';
+import scopeAnime from '../scopeAnime';
 
 describe('Getting anime from subs', () => {
   beforeAll(() => {
