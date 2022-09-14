@@ -1,4 +1,4 @@
-import { scopeAnime } from '../api';
+import scopeAnime from '..';
 import { AvailableSubs } from '../enums';
 
 describe('Getting anime from subs', () => {
