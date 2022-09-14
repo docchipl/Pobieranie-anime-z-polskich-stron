@@ -38,7 +38,7 @@ const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<Ani
     default:
       data = {
         status: 404,
-        message: 'Not found group',
+        message: 'Group not found',
       };
   }
 
