@@ -7,7 +7,6 @@
   "files": [
     "dist/**/*"
   ],
-  "type": "module",
   "scripts": {
     "prepublish": "tsc",
     "build": "tsc",
