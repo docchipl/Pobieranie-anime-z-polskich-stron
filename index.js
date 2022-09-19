@@ -1,4 +1,4 @@
-import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs, Wbijam} from "./modules/index.js";
+import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs, Wbijam, Desuonline} from "./modules/index.js";
 
 function scopeAnime({anime, episode, website}){
 
@@ -31,6 +31,9 @@ function scopeAnime({anime, episode, website}){
         break;
       case 'wbijam':
         data = Wbijam(anime, episode);
+        break;
+      case 'desuonline':
+        data = Desuonline(anime, episode);
         break;
       default:
         data = {

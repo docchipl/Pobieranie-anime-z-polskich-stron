@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
@@ -29,6 +29,8 @@
     "nanasubs",
     "docchi",
     "docchisubs",
+    "desu-online",
+    "desuonline",
     "wbijam",
     "pl",
     "napisy"

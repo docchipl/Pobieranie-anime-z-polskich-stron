@@ -25,15 +25,16 @@ npm install @docchi/scraping-anime-websites-poland
 ```
 </sub>
 
-Obsługiwane strony: 
-- FrixySubs - **frixysubs.pl**
+Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
+- FrixySubs - **frixysubs.pl**
 - Wbijam - **wbijam.pl**
-- Mioro-Subs - **miorosubs.7m.pl**
-- Okami-Subs - **okami-subs.pl**
+- Desu-Online - **desu-online.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
-- DayidSub - **dayidsub.pl**
+- Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.pl**
+- Mioro-Subs - **miorosubs.7m.pl**
+- DayidSub - **dayidsub.pl**
 - Fumetsu - **fumetsu.pl**
 
 Przykłd FrixySubs: 
@@ -71,6 +72,17 @@ console.log(await scopeAnime({
     anime: "danmachi",
     episode: 'czwarta_seria-10',
     website: 'wbijam'
+  }))
+  ```
+  Desu-Online: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "isekai-meikyuu-de-harem-wo",
+    episode: 1,
+    website: 'desuonline'
   }))
   ```
   Okami-Subs: 
