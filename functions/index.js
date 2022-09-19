@@ -1,0 +1,1 @@
+export { default as secondRequest } from "./secondRequest.js";

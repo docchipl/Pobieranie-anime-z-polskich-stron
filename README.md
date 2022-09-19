@@ -28,6 +28,7 @@ npm install @docchi/scraping-anime-websites-poland
 Obsługiwane strony: 
 - FrixySubs - **frixysubs.pl**
 - DocchiSubs - **docchi.pl**
+- Wbijam - **wbijam.pl**
 - Mioro-Subs - **miorosubs.7m.pl**
 - Okami-Subs - **okami-subs.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
@@ -58,6 +59,18 @@ console.log(await scopeAnime({
     anime: 'isekai-yakkyoku-49438',
     episode: '5',
     website: 'docchi'
+  }))
+  ```
+  Wbijam: 
+
+  *note: w anime trzeba podać subdomene*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "danmachi",
+    episode: 'czwarta_seria-10',
+    website: 'wbijam'
   }))
   ```
   Okami-Subs: 
@@ -158,6 +171,7 @@ Wiadomość zwrotna
 
 - 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 - 200 - Wszystko przeszło bez żadnego problemu.
+- 204 - Strona się załadowała, ale brakuje na niej odtwarzaczy (wbijam.pl).
 
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
