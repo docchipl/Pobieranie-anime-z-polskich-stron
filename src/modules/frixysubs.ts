@@ -1,7 +1,7 @@
 import { AxiosClient } from '../api';
 import { AnimeSubsApiResponse } from '../interfaces';
 
-const FrixySubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+export const FrixySubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://frixysubs.pl/api/anime/${anime}/${episode}`;
     const { data } = await new AxiosClient(baseURL).get<any>({
@@ -27,4 +27,3 @@ const FrixySubs = async (anime: string, episode: string): Promise<AnimeSubsApiRe
     };
   }
 };
-export default FrixySubs;

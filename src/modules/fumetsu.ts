@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as jsdom from 'jsdom';
 import { AnimeSubsApiResponse, AnimeSubsEpisode } from '../interfaces';
 import { AxiosClient } from '../api/axiosClient';
@@ -9,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-const FumetsuSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+export const Fumetsu = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://fumetsu.pl/anime/${anime}/${episode}`;
     const { data } = await new AxiosClient(baseURL).get<string>({
@@ -54,4 +53,3 @@ const FumetsuSubs = async (anime: string, episode: string): Promise<AnimeSubsApi
     };
   }
 };
-export default FumetsuSubs;

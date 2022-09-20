@@ -1,5 +1,3 @@
-export * from './api';
-export * from './enums';
-export * from './interfaces';
-export * from './modules';
-export * from './scopeAnime';
+export { default } from './scopeAnime';
+export { IScopeAnime } from './interfaces';
+export { AvailableSubs } from './enums';

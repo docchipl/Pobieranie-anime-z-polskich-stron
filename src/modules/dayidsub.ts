@@ -1,4 +1,3 @@
-import axios, { Axios } from 'axios';
 import * as jsdom from 'jsdom';
 import { AnimeSubsApiResponse } from '../interfaces';
 import { AxiosClient } from '../api/axiosClient';
@@ -9,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-const DayidSub = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+export const DayidSub = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://dayidsub.pl/${anime}/episode${episode}`;
     const { data } = await new AxiosClient(baseURL).get<string>({
@@ -61,4 +60,3 @@ const DayidSub = async (anime: string, episode: string): Promise<AnimeSubsApiRes
     };
   }
 };
-export default DayidSub;

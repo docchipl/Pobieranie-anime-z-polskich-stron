@@ -1,6 +1,6 @@
 import { AvailableSubs } from './enums';
-import { AnimeSubsApiResponse, IScopeAnime } from './interfaces';
-import { FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs } from './modules';
+import { IScopeAnime, AnimeSubsApiResponse } from './interfaces';
+import { FrixySubs, DocchiSubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu } from './modules';
 
 const scopeAnime = async ({ anime, episode, website }: IScopeAnime): Promise<AnimeSubsApiResponse> => {
   let data;

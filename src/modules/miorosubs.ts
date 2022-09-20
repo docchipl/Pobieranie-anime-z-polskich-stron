@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as jsdom from 'jsdom';
 import { AnimeSubsApiResponse, AnimeSubsEpisode } from '../interfaces';
 import { AxiosClient } from '../api/axiosClient';
@@ -9,7 +8,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
+export const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiResponse> => {
   try {
     const baseURL = `https://miorosubs.7m.pl/${anime}-${episode}`;
     const { data } = await new AxiosClient(baseURL, 6000).get<string>({
@@ -46,4 +45,3 @@ const MioroSubs = async (anime: string, episode: string): Promise<AnimeSubsApiRe
     };
   }
 };
-export default MioroSubs;

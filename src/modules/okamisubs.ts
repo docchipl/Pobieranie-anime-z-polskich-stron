@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as jsdom from 'jsdom';
 import { AxiosClient } from '../api/axiosClient';
 
@@ -8,7 +7,7 @@ virtualConsole.on('error', () => {
   // No-op to skip console errors.
 });
 
-const OkamiSubs = async (anime: string, episode: string) => {
+export const OkamiSubs = async (anime: string, episode: string) => {
   try {
     const baseURL = `https://okami-subs.pl/anime/${anime}/odcinek/${episode}`;
     const { data } = await new AxiosClient(baseURL).get<string>();
@@ -46,4 +45,3 @@ const OkamiSubs = async (anime: string, episode: string) => {
     };
   }
 };
-export default OkamiSubs;
