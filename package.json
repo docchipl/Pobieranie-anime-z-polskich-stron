@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
@@ -33,7 +33,9 @@
     "desuonline",
     "wbijam",
     "pl",
-    "napisy"
+    "napisy",
+    "scraper",
+    "scraping"
   ],
   "author": "3xanax",
   "license": "MIT"

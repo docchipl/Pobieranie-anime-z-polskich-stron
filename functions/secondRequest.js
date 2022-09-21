@@ -20,7 +20,7 @@ async function secondRequest(request){
         })
 
     }).catch(err => {
-        console.log(err)
+        //console.log(err)
         return ({
             status: 500,
             message: "Something went wrong!"

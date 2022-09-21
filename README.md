@@ -12,12 +12,16 @@ Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google
 
 ## Instalacja
 
-[Node.js](https://nodejs.org/en/) wymagane
+Javascript:
 ```bash
 npm install @docchi/scraping-anime-websites-poland
 ```
+Typescript:
+```bash
+npm install @docchi/scraping-anime-websites-poland@typescript
+```
 
-## Jak używać
+## Obsługiwane strony
 
 <sub>Nie zapomnij dodać do *package.json*
 ```json
@@ -28,8 +32,6 @@ npm install @docchi/scraping-anime-websites-poland
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
-- Wbijam - **wbijam.pl**
-- Desu-Online - **desu-online.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
 - Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.pl**
@@ -37,7 +39,13 @@ Obsługiwane strony:
 - DayidSub - **dayidsub.pl**
 - Fumetsu - **fumetsu.pl**
 
-Przykłd FrixySubs: 
+Nowe 🚀
+- Wbijam - **wbijam.pl**
+- Desu-Online - **desu-online.pl**
+
+## Przykłady
+
+FrixySubs: 
 
 ```js
 import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -49,7 +57,7 @@ console.log(await scopeAnime({
 }))
 ```
 <details>
-  <summary>Reszta</summary>
+  <summary>Więcej przykładów</summary>
 
   DocchiSubs: 
 

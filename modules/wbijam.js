@@ -58,7 +58,7 @@ function Wbijam (anime, episode){
           episode_next_url: !episode_next_url ? ( null ):( episode_next_url.replaceAll(".html", "") )
         })
       }).catch(err => {
-        console.log(err)
+        //console.log(err)
         return ({
             status: 500,
             message: "Something went wrong!"
