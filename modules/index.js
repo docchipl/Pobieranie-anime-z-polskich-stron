@@ -8,3 +8,4 @@ export { default as Fumetsu } from "./fumetsu.js";
 export { default as DocchiSubs } from "./docchi.js";
 export { default as Wbijam } from "./wbijam.js";
 export { default as Desuonline } from "./desuonline.js";
+export { default as CDA } from "./cda.js";

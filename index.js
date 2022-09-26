@@ -1,6 +1,6 @@
-import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs, Wbijam, Desuonline} from "./modules/index.js";
+import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA} from "./modules/index.js";
 
-function scopeAnime({anime, episode, website}){
+function scopeAnime({anime, episode, website, user, folder, type, spaces}){
 
     let data;
     switch (website) {
@@ -34,6 +34,9 @@ function scopeAnime({anime, episode, website}){
         break;
       case 'desuonline':
         data = Desuonline(anime, episode);
+        break;
+      case 'cda':
+        data = CDA(user, folder, type, spaces, episode);
         break;
       default:
         data = {

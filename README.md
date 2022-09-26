@@ -42,8 +42,12 @@ Obsługiwane strony:
 Nowe 🚀
 - Wbijam - **wbijam.pl**
 - Desu-Online - **desu-online.pl**
+- CDA - **cda.pl**
 
 ## Przykłady
+
+Dokumentacja: [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping)
+
 
 FrixySubs: 
 
@@ -157,6 +161,21 @@ console.log(await scopeAnime({
     anime: 'TatenoYuushanoNariagari2-kiss',
     episode: '1',
     website: 'fumetsu'
+  }))
+  ```
+  CDA: 
+
+  *note: W przypadku cda warto spojrzeć do dokumentacji [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping/cda)*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    user: "docchi",
+    folder: 37956235,
+    type: "spaces",
+    spaces: "3",
+    episode: 1,
+    website: "cda"
   }))
   ```
 </details>
