@@ -38,11 +38,16 @@ Obsługiwane strony:
 - Mioro-Subs - **miorosubs.7m.pl**
 - DayidSub - **dayidsub.pl**
 - Fumetsu - **fumetsu.pl**
-
-Nowe 🚀
 - Wbijam - **wbijam.pl**
 - Desu-Online - **desu-online.pl**
 - CDA - **cda.pl**
+
+Nowe 🚀
+- KatherineMay - **kathsubs.blogspot.com**
+
+Aktualizacja 🚀
+- MaouSubs - **maousubs.pythonanywhere.com**
+
 
 ## Przykłady
 
@@ -56,7 +61,7 @@ import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
 console.log(await scopeAnime({
     anime: 'spy-x-family',
-    episode: '1',
+    episode: 1,
     website: 'frixysubs'
 }))
 ```
@@ -70,7 +75,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'isekai-yakkyoku-49438',
-    episode: '5',
+    episode: 5,
     website: 'docchi'
   }))
   ```
@@ -115,7 +120,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'summertime-render-odcinek',
-    episode: '12',
+    episode: 12,
     website: 'miorosubs'
   }))
   ```
@@ -125,8 +130,8 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: '',
-    episode: 'yofukashi-no-uta-4',
+    anime: 'yofukashi-no-uta',
+    episode: 4,
     website: 'maousubs'
   }))
   ```
@@ -148,7 +153,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'engage-kiss',
-    episode: '855',
+    episode: 855,
     website: 'nanasubs'
   }))
   ```
@@ -159,8 +164,19 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'TatenoYuushanoNariagari2-kiss',
-    episode: '1',
+    episode: 1,
     website: 'fumetsu'
+  }))
+  ```
+  KatherineMay: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "incomparable-demon-king",
+    episode: 22,
+    website: "kathsubs"
   }))
   ```
   CDA: 

@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
@@ -36,7 +36,8 @@
     "napisy",
     "scraper",
     "scraping",
-    "cda"
+    "cda",
+    "kathsubs"
   ],
   "author": "3xanax",
   "license": "MIT"
