@@ -36,13 +36,21 @@ function CDA (anime, episode){
             
           })
         )
-        
-        return ({
+
+        if(episode_url_cleaning.length === 0){
+          return ({
+            status: 500,
+            message: "Something went wrong!"
+          })
+        }else{
+          return ({
             status: 200, 
             message: "Success",
             episode_url: episode_url_cleaning,
             episode_next_url: Number(episode)+1
-        })
+          })
+        }
+        
       }).catch(err => {
         //console.log(err)
         return ({
