@@ -2,7 +2,7 @@
 
 Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1019238100339269733/Docchi_1.png)
+![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1034503332053663794/Docchi.png)
 
 ## Kontakt
 
