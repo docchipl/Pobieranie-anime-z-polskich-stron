@@ -12,12 +12,16 @@ Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google
 
 ## Instalacja
 
-[Node.js](https://nodejs.org/en/) wymagane
+Javascript:
 ```bash
 npm install @docchi/scraping-anime-websites-poland
 ```
+Typescript:
+```bash
+npm install @docchi/scraping-anime-websites-poland@typescript
+```
 
-## Jak używać
+## Obsługiwane strony
 
 <sub>Nie zapomnij dodać do *package.json*
 ```json
@@ -25,29 +29,46 @@ npm install @docchi/scraping-anime-websites-poland
 ```
 </sub>
 
-Obsługiwane strony: 
-- FrixySubs - **frixysubs.pl**
+Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
-- Mioro-Subs - **miorosubs.7m.pl**
-- Okami-Subs - **okami-subs.pl**
+- FrixySubs - **frixysubs.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
-- DayidSub - **dayidsub.pl**
+- Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.pl**
+- Mioro-Subs - **miorosubs.7m.pl**
+- DayidSub - **dayidsub.pl**
 - Fumetsu - **fumetsu.pl**
+- Wbijam - **wbijam.pl**
+- Desu-Online - **desu-online.pl**
+- CDA - **cda.pl**
 
-Przykłd FrixySubs: 
+Nowe 🚀
+- KatherineMay - **kathsubs.blogspot.com**
+- Grupa-mirai - **grupa-mirai.pl**
+
+
+Aktualizacja 🛰️
+- Mioro-Subs - **miorosubs.7m.pl**
+
+
+## Przykłady
+
+Dokumentacja: [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping)
+
+
+FrixySubs: 
 
 ```js
 import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
 console.log(await scopeAnime({
     anime: 'spy-x-family',
-    episode: '1',
+    episode: 1,
     website: 'frixysubs'
 }))
 ```
 <details>
-  <summary>Reszta</summary>
+  <summary>Więcej przykładów</summary>
 
   DocchiSubs: 
 
@@ -56,8 +77,31 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'isekai-yakkyoku-49438',
-    episode: '5',
+    episode: 5,
     website: 'docchi'
+  }))
+  ```
+  Wbijam: 
+
+  *note: w anime trzeba podać subdomene*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "danmachi",
+    episode: 'czwarta_seria-10',
+    website: 'wbijam'
+  }))
+  ```
+  Desu-Online: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "isekai-meikyuu-de-harem-wo",
+    episode: 1,
+    website: 'desuonline'
   }))
   ```
   Okami-Subs: 
@@ -77,8 +121,8 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'summertime-render-odcinek',
-    episode: '12',
+    anime: 'summertime-render',
+    episode: 12,
     website: 'miorosubs'
   }))
   ```
@@ -88,8 +132,8 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: '',
-    episode: 'yofukashi-no-uta-4',
+    anime: 'yofukashi-no-uta',
+    episode: 4,
     website: 'maousubs'
   }))
   ```
@@ -111,7 +155,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'engage-kiss',
-    episode: '855',
+    episode: 855,
     website: 'nanasubs'
   }))
   ```
@@ -122,8 +166,45 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'TatenoYuushanoNariagari2-kiss',
-    episode: '1',
+    episode: 1,
     website: 'fumetsu'
+  }))
+  ```
+  KatherineMay: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "incomparable-demon-king",
+    episode: 22,
+    website: "kathsubs"
+  }))
+  ```
+  CDA: 
+
+  *note: W przypadku cda warto spojrzeć do dokumentacji [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping/cda)*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    user: "docchi",
+    folder: 37956235,
+    type: "spaces",
+    spaces: "3",
+    episode: 1,
+    website: "cda"
+  }))
+  ```
+  Grupa-mirai: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "db",
+    episode: 5,
+    website: "mirai"
   }))
   ```
 </details>
@@ -158,6 +239,7 @@ Wiadomość zwrotna
 
 - 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 - 200 - Wszystko przeszło bez żadnego problemu.
+- 204 - Strona się załadowała, ale brakuje na niej odtwarzaczy (wbijam.pl).
 
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
