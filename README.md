@@ -44,9 +44,11 @@ Obsługiwane strony:
 
 Nowe 🚀
 - KatherineMay - **kathsubs.blogspot.com**
+- Grupa-mirai - **grupa-mirai.pl**
 
-Aktualizacja 🚀
-- MaouSubs - **maousubs.pythonanywhere.com**
+
+Aktualizacja 🛰️
+- Mioro-Subs - **miorosubs.7m.pl**
 
 
 ## Przykłady
@@ -119,7 +121,7 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'summertime-render-odcinek',
+    anime: 'summertime-render',
     episode: 12,
     website: 'miorosubs'
   }))
@@ -192,6 +194,17 @@ console.log(await scopeAnime({
     spaces: "3",
     episode: 1,
     website: "cda"
+  }))
+  ```
+  Grupa-mirai: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "db",
+    episode: 5,
+    website: "mirai"
   }))
   ```
 </details>

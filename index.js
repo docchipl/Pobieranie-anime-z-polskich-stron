@@ -1,5 +1,5 @@
 import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, 
-  Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA, Kathsubs} from "./modules/index.js";
+  Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA, Kathsubs, Grupamirai} from "./modules/index.js";
 
 function scopeAnime({anime, episode, website, user, folder, type, spaces}){
 
@@ -48,6 +48,10 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces}){
         break;
       case 'kathsubs':
         data = Kathsubs(anime, episode);
+        break;
+      case 'grupamirai':
+      case 'mirai':
+        data = Grupamirai(anime, episode);
         break;
       default:
         data = {
