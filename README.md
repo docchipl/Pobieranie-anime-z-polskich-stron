@@ -32,7 +32,7 @@ npm install @docchi/scraping-anime-websites-poland@typescript
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
-- MaouSubs - **maousubs.pythonanywhere.com**
+- MaouSubs - **anime-maou.pl**
 - Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.pl**
 - Mioro-Subs - **miorosubs.7m.pl**
@@ -49,6 +49,7 @@ Nowe 🚀
 
 Aktualizacja 🛰️
 - Mioro-Subs - **miorosubs.7m.pl**
+- MaouSubs - **anime-maou.pl** - Switch to api
 
 
 ## Przykłady
