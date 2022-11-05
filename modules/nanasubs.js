@@ -8,30 +8,33 @@ virtualConsole.on("error", () => {
 });
 
 function NanaSubs (anime, episode){
-    const request = axios.get(`https://nanasubs.pl/anime/${anime}/odcinki/${episode}`, {
+    const request = axios.get(`https://nanasubs.pl/anime/${anime}/odcinek-${episode}`, {
         headers: {
-          Referer: `https://nanasubs.pl/anime/${anime}/odcinki/${episode}`,
+          Referer: `https://nanasubs.pl/anime/${anime}/odcinek-${episode}`,
           'X-Requested-With': 'XMLHttpRequest'
         }
-      }).then(function (response) {
+      }).then(async function (response) {
+        //console.log(response.data)
         const dom = new JSDOM(response.data, { virtualConsole });
-        const items = dom.window.document.querySelectorAll('#players-btn .episode__players-list span');
+        const items = dom.window.document.querySelectorAll('.ns-episode-players-option');
 
         let episode_url_cleaning = [];
-        let episode_next_url = dom.window.document.querySelector('.episode__episodes-list .episode__tile a[class="episode__tile-link"]').href.split('/').pop().replace(/[A-Za-z]/g, "");
 
-        for (var i = 0; i < items.length; ++i) {
-          episode_url_cleaning.push({
-            player: items[i].textContent.toUpperCase(),
-            url: items[i].getAttribute('data-player-url')
-          });
-        }
+        await Promise.all(
+          Array.from(items).map(async function(x) {
+
+            episode_url_cleaning.push({
+                player: x.getAttribute("data-player"),
+                url: x.getAttribute("data-player-url")
+            });
+          })
+        )
         
         return ({
           status: 200, 
           message: "Success",
           episode_url: episode_url_cleaning,
-          episode_next_url: episode >= episode_next_url ? ( null ):( Number(episode_next_url) )
+          episode_next_url: Number(episode)+1
         })
       }).catch(err => {
         //console.log(err)

@@ -41,14 +41,11 @@ Obsługiwane strony:
 - Wbijam - **wbijam.pl**
 - Desu-Online - **desu-online.pl**
 - CDA - **cda.pl**
-
-Nowe 🚀
 - KatherineMay - **kathsubs.blogspot.com**
 - Grupa-mirai - **grupa-mirai.pl**
 
-
 Aktualizacja 🛰️
-- Mioro-Subs - **miorosubs.7m.pl**
+- NanaSubs - **nanasubs.pl**
 - MaouSubs - **anime-maou.pl** - Switch to api
 
 
@@ -155,8 +152,8 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'engage-kiss',
-    episode: 855,
+    anime: 'mob-psycho-iii',
+    episode: 3,
     website: 'nanasubs'
   }))
   ```
