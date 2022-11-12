@@ -1,5 +1,5 @@
 import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, 
-  Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA, Kathsubs, Grupamirai} from "./modules/index.js";
+  Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA, Kathsubs, Grupamirai, Reikoproject} from "./modules/index.js";
 
 function scopeAnime({anime, episode, website, user, folder, type, spaces}){
 
@@ -52,6 +52,10 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces}){
       case 'grupamirai':
       case 'mirai':
         data = Grupamirai(anime, episode);
+        break;
+      case 'reikoproject':
+      case 'reiko':
+        data = Reikoproject(anime, episode);
         break;
       default:
         data = {

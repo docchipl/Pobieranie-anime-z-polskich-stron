@@ -43,6 +43,10 @@ Obsługiwane strony:
 - CDA - **cda.pl**
 - KatherineMay - **kathsubs.blogspot.com**
 - Grupa-mirai - **grupa-mirai.pl**
+- Reiko Project - **reikoproject.blogspot.com**
+
+Nowe 🚀
+- Reiko Project - **reikoproject.blogspot.com**
 
 Aktualizacja 🛰️
 - NanaSubs - **nanasubs.pl**
@@ -203,6 +207,17 @@ console.log(await scopeAnime({
     anime: "db",
     episode: 5,
     website: "mirai"
+  }))
+  ```
+    Reiko Project: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "2020/10/wu-shen-zhu-zai-odcinki-pl",
+    episode: 5,
+    website: "reiko"
   }))
   ```
 </details>

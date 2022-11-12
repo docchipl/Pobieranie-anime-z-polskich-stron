@@ -11,3 +11,4 @@ export { default as Desuonline } from "./desuonline.js";
 export { default as CDA } from "./cda.js";
 export { default as Kathsubs } from "./kathsubs.js";
 export { default as Grupamirai } from "./grupamirai.js";
+export { default as Reikoproject } from "./reikoproject.js";
