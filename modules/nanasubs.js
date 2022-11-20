@@ -16,6 +16,8 @@ function NanaSubs (anime, episode){
       }).then(async function (response) {
         //console.log(response.data)
         const dom = new JSDOM(response.data, { virtualConsole });
+        const nanaArray = dom.window.document.querySelectorAll(`script[type="application/ld+json"]`);
+        const nanaData = JSON.parse(Array.from(nanaArray)[1].textContent)
         const items = dom.window.document.querySelectorAll('.ns-episode-players-option');
 
         let episode_url_cleaning = [];
@@ -33,6 +35,7 @@ function NanaSubs (anime, episode){
         return ({
           status: 200, 
           message: "Success",
+          episode_thumbnail: nanaData.thumbnailUrl || null,
           episode_url: episode_url_cleaning,
           episode_next_url: Number(episode)+1
         })

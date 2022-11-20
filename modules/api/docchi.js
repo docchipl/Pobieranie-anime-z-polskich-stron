@@ -1,21 +1,20 @@
 import axios from 'axios';
 
-function FrixySubs (anime, episode){
-  const request = axios.get(`https://frixysubs.pl/api/anime/${anime}/${episode}`, {
+function DocchiSubs (anime, episode){
+  const request = axios.get(`https://api.docchi.pl/v1/episodes/find/${anime}/${episode}`, {
       headers: {
         Accept: `application/json`
       }
     }).then(function (response) {
 
-      // console.log(response.data.episode.players)
-
       return ({
         status: 200, 
         message: "Success",
-        episode_url: response.data.episode.players.map(function(x) {
+        episode_thumbnail: response.data.bg || null,
+        episode_url: response.data.map(function(x) {
           return({
-            player: x.name,
-            url: x.link
+            player: x.player_hosting,
+            url: x.player
           })
         }),
         episode_next_url: Number(episode)+1
@@ -31,4 +30,4 @@ function FrixySubs (anime, episode){
 
     return (request);
 }
-export default FrixySubs;
+export default DocchiSubs;

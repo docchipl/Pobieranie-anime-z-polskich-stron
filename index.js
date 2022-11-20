@@ -1,5 +1,6 @@
-import {FrixySubs, OkamiSubs, MioroSubs, MaouSubs, DayidSub, NanaSubs, 
-  Fumetsu, DocchiSubs, Wbijam, Desuonline, CDA, Kathsubs, Grupamirai, Reikoproject} from "./modules/index.js";
+import {OkamiSubs, DayidSub, NanaSubs, Fumetsu, Wbijam, CDA, Kathsubs, Grupamirai, Reikoproject} from "./modules/index.js";
+import {FrixySubs, DocchiSubs, MaouSubs} from "./modules/api/index.js";
+import {Desuonline, MioroSubs} from "./modules/wordpress/index.js";
 
 function scopeAnime({anime, episode, website, user, folder, type, spaces}){
 

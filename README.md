@@ -45,12 +45,12 @@ Obsługiwane strony:
 - Grupa-mirai - **grupa-mirai.pl**
 - Reiko Project - **reikoproject.blogspot.com**
 
-Nowe 🚀
-- Reiko Project - **reikoproject.blogspot.com**
-
 Aktualizacja 🛰️
-- NanaSubs - **nanasubs.pl**
-- MaouSubs - **anime-maou.pl** - Switch to api
+- FrixySubs - **frixysubs.pl** - Now returns thumbnail for episode
+- DocchiSubs - **docchi.pl** - Now returns thumbnail for episode
+- NanaSubs - **nanasubs.pl** - Now returns thumbnail for episode
+- MaouSubs - **anime-maou.pl** - Now returns thumbnail for episode
+- Wbijam - **wbijam.pl** - Now returns thumbnail for episode
 
 
 ## Przykłady

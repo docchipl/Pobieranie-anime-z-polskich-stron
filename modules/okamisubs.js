@@ -8,13 +8,23 @@ virtualConsole.on("error", () => {
 });
 
 function OkamiSubs (anime, episode){
-    const request = axios.get(`https://okami-subs.pl/anime/${anime}/odcinek/${episode}`).then(function (response) {
-        const dom = new JSDOM(response.data, { virtualConsole });
-        const episode_url_cleaning = JSON.parse("["+dom.window.document.getElementsByTagName('script')[4].textContent.match(/\[(.+)\]/)[1]+"]");
+    const request = axios.get(`https://okami-subs.pl/anime/${anime}/odcinek/${episode}`).then(async function (response) {
+        const dom = new JSDOM(response.data, { runScripts: 'dangerously', virtualConsole }).window;
+        let episode_url_cleaning = [];
+        const okamiData = dom.InitData;
         let episode_next_url;
 
-        if(dom.window.document.querySelector('.col-md-4.col-xs-12 .button.pull-right')){
-          episode_next_url = dom.window.document.querySelector('.col-md-4.col-xs-12 .button.pull-right').href.split("/").pop();
+        await Promise.all(
+          okamiData.episode_links.map(async function(x) {
+            episode_url_cleaning.push({
+                player: x.player,
+                url: x.url
+            });
+          })
+        )
+
+        if(dom.document.querySelector('.col-md-4.col-xs-12 .button.pull-right')){
+          episode_next_url = dom.document.querySelector('.col-md-4.col-xs-12 .button.pull-right').href.split("/").pop();
         }else{
           episode_next_url = null;
         }
@@ -22,12 +32,7 @@ function OkamiSubs (anime, episode){
         return ({
           status: 200, 
           message: "Success",
-          episode_url: episode_url_cleaning.map(function(x) {
-            return({
-              player: x.player,
-              url: x.url
-            })
-          }),
+          episode_url: episode_url_cleaning,
           episode_next_url: episode_next_url
         })
       }).catch(err => {
