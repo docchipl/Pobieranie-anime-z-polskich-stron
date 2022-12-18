@@ -6,7 +6,6 @@ const virtualConsole = new jsdom.VirtualConsole();
 virtualConsole.on("error", () => {
   // No-op to skip console errors.
 });
-
 function CDA (user, folder, type, spaces , episode){
     const request = axios.get(`https://www.cda.pl/${user}/folder/${folder}`, {
         headers: {
@@ -15,13 +14,15 @@ function CDA (user, folder, type, spaces , episode){
         }
       }).then(async function (response) {
         const dom = new JSDOM(response.data, { virtualConsole });
+        const thumbnails = dom.window.document.querySelectorAll('.list-when-small.tip .thumbnail.viewList-inline .wrapper-thumb-link .thumbnail-link img.thumb');
         const items = dom.window.document.querySelectorAll('.list-when-small.tip .thumbnail.viewList-inline .caption .caption-label');
 
         let episode_url_cleaning = [];
         let wrongType = false;
 
         await Promise.all(
-          Array.from(items).map(function(x) {
+          Array.from(items).map(function(x, index) {
+            const thumbnailEpisode = thumbnails[index].src.replaceAll("192x108.jpg", "1280x720.jpg");
             if(type.toLowerCase() === "spaces"){
               const player_title = Number(x.querySelector('a').textContent.split(' ')[Number(spaces)]);
   
@@ -31,7 +32,8 @@ function CDA (user, folder, type, spaces , episode){
                 episode_url_cleaning.push({
                   player: "CDA",
                   episode_number: player_title,
-                  url: `https://www.cda.pl${x.querySelector('a').href}`
+                  url: `https://www.cda.pl${x.querySelector('a').href}`,
+                  episode_thumbnail: thumbnailEpisode || null,
                 });
 
                 return;
@@ -43,7 +45,8 @@ function CDA (user, folder, type, spaces , episode){
               /* Pushing the url to the array. */
               episode_url_cleaning.push({
                 player: "CDA",
-                url: `https://www.cda.pl${x.querySelector('a').href}`
+                url: `https://www.cda.pl${x.querySelector('a').href}`,
+                episode_thumbnail: thumbnailEpisode || null,
               });
   
             }else if(type.toLowerCase() === "s0e0"){
@@ -55,7 +58,8 @@ function CDA (user, folder, type, spaces , episode){
                 episode_url_cleaning.push({
                   player: "CDA",
                   episode_number: player_title,
-                  url: `https://www.cda.pl${x.querySelector('a').href}`
+                  url: `https://www.cda.pl${x.querySelector('a').href}`,
+                  episode_thumbnail: thumbnailEpisode || null,
                 });
 
                 return;
@@ -67,7 +71,8 @@ function CDA (user, folder, type, spaces , episode){
               /* Pushing the url to the array. */
               episode_url_cleaning.push({
                 player: "CDA",
-                url: `https://www.cda.pl${x.querySelector('a').href}`
+                url: `https://www.cda.pl${x.querySelector('a').href}`,
+                episode_thumbnail: thumbnailEpisode || null,
               });
             }else{
               wrongType = true;
@@ -92,12 +97,13 @@ function CDA (user, folder, type, spaces , episode){
           return ({
             status: 200, 
             message: "Success",
+            // episode_thumbnail: thumbnails[index] || null,
             episode_url: episode_url_cleaning,
             episode_next_url: Number(episode)+1
           })
         }
       }).catch(err => {
-        //console.log(err)
+        console.log(err)
         return ({
             status: 500,
             message: "Something went wrong!"

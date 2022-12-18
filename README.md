@@ -51,6 +51,7 @@ Aktualizacja 🛰️
 - NanaSubs - **nanasubs.pl** - Now returns thumbnail for episode
 - MaouSubs - **anime-maou.pl** - Now returns thumbnail for episode
 - Wbijam - **wbijam.pl** - Now returns thumbnail for episode
+- CDA - **cda.pl** - Now returns thumbnail for episode
 
 
 ## Przykłady
