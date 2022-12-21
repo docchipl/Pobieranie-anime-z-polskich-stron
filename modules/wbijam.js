@@ -24,7 +24,11 @@ function Wbijam (anime, episode){
 
         const episode_next_url = dom.window.document.querySelector('.nawigacja_prawa a').href
         let episode_url_cleaning = [];
-        const wbijamthumbnail = `https://${anime}.wbijam.pl/${dom.window.document.querySelector(`a[rel="galeria"]`).href}` || null;
+        const wbijamthumbnail = dom.window.document.querySelector(`a[rel="galeria"]`) ? (
+          `https://${anime}.wbijam.pl/${dom.window.document.querySelector(`a[rel="galeria"]`).href}`
+        ):(
+          null
+        )
 
         await Promise.all(
           Array.from(items).map(async function(x) {
