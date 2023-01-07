@@ -1,4 +1,4 @@
-import {OkamiSubs, DayidSub, NanaSubs, Fumetsu, Wbijam, CDA, Kathsubs, Grupamirai, Reikoproject} from "./modules/index.js";
+import {OkamiSubs, NanaSubs, Fumetsu, Wbijam, CDA, Kathsubs, Grupamirai, Reikoproject, OrfeuszSubs} from "./modules/index.js";
 import {FrixySubs, DocchiSubs, MaouSubs} from "./modules/api/index.js";
 import {Desuonline, MioroSubs} from "./modules/wordpress/index.js";
 
@@ -22,10 +22,10 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces}){
       case 'maou':
         data = MaouSubs(anime, episode);
         break;
-      case 'dayidsub':
-      case 'dayid':
-        data = DayidSub(anime, episode);
-        break;
+      // case 'dayidsub':
+      // case 'dayid':
+      //   data = DayidSub(anime, episode);
+      //   break;
       case 'nanasubs':
       case 'nana':
         data = NanaSubs(anime, episode);
@@ -57,6 +57,10 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces}){
       case 'reikoproject':
       case 'reiko':
         data = Reikoproject(anime, episode);
+        break;
+      case 'orfeuszsubs':
+      case 'orfeusz':
+        data = OrfeuszSubs(anime, episode);
         break;
       default:
         data = {

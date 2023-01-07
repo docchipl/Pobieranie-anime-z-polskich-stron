@@ -1,6 +1,6 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
   "main": "index.js",
   "repository": {
@@ -39,7 +39,8 @@
     "cda",
     "kathsubs",
     "grupa-mirai",
-    "reikoproject"
+    "reikoproject",
+    "orfeuszsubs"
   ],
   "author": "3xanax",
   "license": "MIT"

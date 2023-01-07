@@ -2,7 +2,7 @@
 
 Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1034503332053663794/Docchi.png)
+![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1061424910662119474/Docchi.png)
 
 ## Kontakt
 
@@ -36,7 +36,6 @@ Obsługiwane strony:
 - Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.pl**
 - Mioro-Subs - **miorosubs.7m.pl**
-- DayidSub - **dayidsub.pl**
 - Fumetsu - **fumetsu.pl**
 - Wbijam - **wbijam.pl**
 - Desu-Online - **desu-online.pl**
@@ -44,15 +43,10 @@ Obsługiwane strony:
 - KatherineMay - **kathsubs.blogspot.com**
 - Grupa-mirai - **grupa-mirai.pl**
 - Reiko Project - **reikoproject.blogspot.com**
+- Orfeusz Subs - **orfeusz-subs.pl**
 
-Aktualizacja 🛰️
-- FrixySubs - **frixysubs.pl** - Now returns thumbnail for episode
-- DocchiSubs - **docchi.pl** - Now returns thumbnail for episode
-- NanaSubs - **nanasubs.pl** - Now returns thumbnail for episode
-- MaouSubs - **anime-maou.pl** - Now returns thumbnail for episode
-- Wbijam - **wbijam.pl** - Now returns thumbnail for episode
-- CDA - **cda.pl** - Now returns thumbnail for episode
-
+Nowe 🚀
+- Orfeusz Subs - **orfeusz-subs.pl**
 
 ## Przykłady
 
@@ -221,6 +215,17 @@ console.log(await scopeAnime({
     website: "reiko"
   }))
   ```
+    Orfeusz Subs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log("Orfeusz-Subs: ",await scopeAnime({
+    anime: "buddy-daddies",
+    episode: 1,
+    website: "orfeusz"
+  }))
+  ```
 </details>
 
 Wiadomość zwrotna
@@ -258,7 +263,7 @@ Wiadomość zwrotna
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/docchi)
+[![ko-fi](https://buycoffee.to/btn/buycoffeeto-btn-primary.svg)](https://buycoffee.to/docchi)
 
 # Licencja
 [MIT](https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/blob/main/LICENSE)

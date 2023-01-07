@@ -77,3 +77,9 @@ console.log("ReikoProject: ",await scopeAnime({
     episode: 6,
     website: "reikoproject"
 }))
+
+console.log("Orfeusz-Subs: ",await scopeAnime({
+    anime: "buddy-daddies",
+    episode: 1,
+    website: "orfeusz"
+}))
