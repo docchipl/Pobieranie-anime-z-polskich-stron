@@ -103,7 +103,7 @@ function CDA (user, folder, type, spaces , episode){
           })
         }
       }).catch(err => {
-        console.log(err)
+        //console.log(err)
         return ({
             status: 500,
             message: "Something went wrong!"

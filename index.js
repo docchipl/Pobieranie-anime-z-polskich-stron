@@ -1,8 +1,9 @@
-import {OkamiSubs, NanaSubs, Fumetsu, Wbijam, CDA, Kathsubs, Grupamirai, Reikoproject, OrfeuszSubs} from "./modules/index.js";
+import {OkamiSubs, NanaSubs, Fumetsu, Wbijam, Kathsubs, Grupamirai, Reikoproject, OrfeuszSubs} from "./modules/index.js";
 import {FrixySubs, DocchiSubs, MaouSubs} from "./modules/api/index.js";
 import {Desuonline, MioroSubs} from "./modules/wordpress/index.js";
+import {CDA, CDAProfile} from "./modules/cda/index.js";
 
-function scopeAnime({anime, episode, website, user, folder, type, spaces}){
+function scopeAnime({anime, episode, website, user, folder, type, spaces, keyword}){
 
     let data;
     switch (website) {
@@ -46,6 +47,9 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces}){
         break;
       case 'cda':
         data = CDA(user, folder, type, spaces, episode);
+        break;
+      case 'cdaprofile':
+        data = CDAProfile(user, keyword, type, spaces, episode);
         break;
       case 'kathsubs':
         data = Kathsubs(anime, episode);
