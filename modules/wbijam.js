@@ -22,13 +22,11 @@ function Wbijam (anime, episode){
         if(Array.from(items).length === 0 && !dom.window.document.querySelector(".pod_naglowek")) return ({ status: 500, message: "Something went wrong!", message_extra: "Page loads but doesn't have a header or players."});
         if(Array.from(items).length === 0 && dom.window.document.querySelector(".pod_naglowek")) return ({ status: 204, message: "Page loads but doesn't have any players."});
 
-        const episode_next_url = dom.window.document.querySelector('.nawigacja_prawa a').href
+
+        const nextEpisodeButton = dom.window.document.querySelector('.nawigacja_prawa a');
+        const episode_next_url = nextEpisodeButton ? nextEpisodeButton.href : null;
         let episode_url_cleaning = [];
-        const wbijamthumbnail = dom.window.document.querySelector(`a[rel="galeria"]`) ? (
-          `https://${anime}.wbijam.pl/${dom.window.document.querySelector(`a[rel="galeria"]`).href}`
-        ):(
-          null
-        )
+        const wbijamthumbnail = dom.window.document.querySelector(`a[rel="galeria"]`) ? `https://${anime}.wbijam.pl/${dom.window.document.querySelector(`a[rel="galeria"]`).href}`: null;
 
         await Promise.all(
           Array.from(items).map(async function(x) {
