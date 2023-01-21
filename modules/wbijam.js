@@ -21,6 +21,7 @@ function Wbijam (anime, episode){
 
         if(Array.from(items).length === 0 && !dom.window.document.querySelector(".pod_naglowek")) return ({ status: 500, message: "Something went wrong!", message_extra: "Page loads but doesn't have a header or players."});
         if(Array.from(items).length === 0 && dom.window.document.querySelector(".pod_naglowek")) return ({ status: 204, message: "Page loads but doesn't have any players."});
+        if(Array.from(items).length === 1 && Array.from(items)[0].querySelector(".odtwarzacz_link").textContent.includes("zwiastun")) return ({status: 500, message: "Something went wrong!", message_extra: "Page loads but have only a trailer."});
 
 
         const nextEpisodeButton = dom.window.document.querySelector('.nawigacja_prawa a');
