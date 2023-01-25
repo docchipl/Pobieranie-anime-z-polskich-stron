@@ -1,6 +1,6 @@
 import {OkamiSubs, NanaSubs, Fumetsu, Wbijam, Kathsubs, Grupamirai, Reikoproject, OrfeuszSubs} from "./modules/index.js";
 import {FrixySubs, DocchiSubs, MaouSubs} from "./modules/api/index.js";
-import {Desuonline, MioroSubs} from "./modules/wordpress/index.js";
+import {Desuonline, MioroSubs, JuniorSubs} from "./modules/wordpress/index.js";
 import {CDA, CDAProfile} from "./modules/cda/index.js";
 
 function scopeAnime({anime, episode, website, user, folder, type, spaces, keyword}){
@@ -65,6 +65,10 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces, keywor
       case 'orfeuszsubs':
       case 'orfeusz':
         data = OrfeuszSubs(anime, episode);
+        break;
+      case 'juniorsubs':
+      case 'junior':
+        data = JuniorSubs(folder, anime, episode);
         break;
       default:
         data = {

@@ -44,9 +44,11 @@ Obsługiwane strony:
 - Grupa-mirai - **grupa-mirai.pl**
 - Reiko Project - **reikoproject.blogspot.com**
 - Orfeusz Subs - **orfeusz-subs.pl**
+- Orfeusz Subs - **juniorsubs.pl**
 
 Nowe 🚀
 - Orfeusz Subs - **orfeusz-subs.pl**
+- Junior-Subs - **juniorsubs.pl**
 
 ## Przykłady
 
@@ -220,10 +222,22 @@ console.log(await scopeAnime({
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
-  console.log("Orfeusz-Subs: ",await scopeAnime({
+  console.log(await scopeAnime({
     anime: "buddy-daddies",
     episode: 1,
     website: "orfeusz"
+  }))
+  ```
+    Junior-Subs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    folder: "hentai",
+    anime: "yuutousei-ayaka-no-uraomote",
+    episode: "01",
+    website: "junior"
   }))
   ```
 </details>

@@ -83,3 +83,10 @@ console.log("Orfeusz-Subs: ",await scopeAnime({
     episode: 1,
     website: "orfeusz"
 }))
+
+console.log("Junior-Subs: ",await scopeAnime({
+    folder: "hentai",
+    anime: "yuutousei-ayaka-no-uraomote",
+    episode: "01",
+    website: "junior"
+}))
