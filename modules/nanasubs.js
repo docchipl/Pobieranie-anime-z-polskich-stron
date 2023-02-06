@@ -8,9 +8,9 @@ virtualConsole.on("error", () => {
 });
 
 function NanaSubs (anime, episode){
-    const request = axios.get(`https://nanasubs.pl/anime/${anime}/odcinek-${episode}`, {
+    const request = axios.get(`https://nanasubs.fun/anime/${anime}/odcinek-${episode}`, {
         headers: {
-          Referer: `https://nanasubs.pl/anime/${anime}/odcinek-${episode}`,
+          Referer: `https://nanasubs.fun/anime/${anime}/odcinek-${episode}`,
           'X-Requested-With': 'XMLHttpRequest'
         }
       }).then(async function (response) {
