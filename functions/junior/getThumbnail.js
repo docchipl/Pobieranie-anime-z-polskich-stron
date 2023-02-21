@@ -24,7 +24,7 @@ async function secondRequest(request){
                 const title = x.textContent.toLowerCase();
                 if(title.includes("odcinek")){
                     if(request.episode === Number(title.replaceAll("odcinek", "")) ){
-                        thumbnail = thumbnails[index].querySelector("img").src || null;
+                        thumbnail = thumbnails[index-1].querySelector("img").src || null;
                     }
                 }
                 return;
