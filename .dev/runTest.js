@@ -79,8 +79,8 @@ console.log("ReikoProject: ",await scopeAnime({
 }))
 
 console.log("Orfeusz-Subs: ",await scopeAnime({
-    anime: "buddy-daddies",
-    episode: 1,
+    anime: "isekai-nonbiri-nouka",
+    episode: 7,
     website: "orfeusz"
 }))
 

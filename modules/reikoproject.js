@@ -25,11 +25,12 @@ function Reiko (anime, episode){
             if(x.querySelector("a")){
               const text = x.textContent;
               const link = x.querySelector("a");
+              const definePlayer = !link ? null : playerChecking(link.href);
 
-              if(link && playerChecking(link.href)){
+              if(link && definePlayer){
                 if(Number(text.match(/(\d+)/)[0]) === Number(episode)){
                   episode_url_cleaning.push({
-                    player: "CDA",
+                    player: definePlayer.name,
                     url: link.href
                   });
                 }

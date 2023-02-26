@@ -37,11 +37,13 @@ function OrfeuszSubs (anime, episode){
                         message: "Something went wrong!"
                     })
                 }
-                const playerURL = player.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm)[0];
 
-                if(player && playerChecking(playerURL)){
+                const playerURL = player.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm)[0];
+                const definePlayer = player ? playerChecking(playerURL) : null;
+
+                if(player && definePlayer){
                     episode_url_cleaning.push({
-                        player: "CDA",
+                        player: definePlayer.name,
                         url: playerURL
                     });
                 }

@@ -9,10 +9,6 @@ async function secondRequest(request){
             }
     }).then(function (response) {
 
-        // fs.writeFile('helloworld.html', response.data, function (err) {
-        //     if (err) return console.log(err);
-        //     console.log('Hello World > helloworld.txt');
-        //   });
         return ({
             status: 200,
             message: "Success",

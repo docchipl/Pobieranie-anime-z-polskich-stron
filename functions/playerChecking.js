@@ -7,11 +7,29 @@ const playerChecking = function(props) {
         switch (host) {
             case 'cda.pl':
 
-                readyToSend = true;
+                readyToSend = {
+                    status: true,
+                    name: "CDA"
+                };
                 break;
             case 'ebd.cda.pl':
 
-                readyToSend = true;
+                readyToSend = {
+                    status: true,
+                    name: "CDA"
+                };
+                break;
+            case 'drive.google.com':
+                readyToSend = {
+                    status: true,
+                    name: "GOOGLE DRIVE"
+                };
+                break;
+            case 'mega.nz':
+                readyToSend = {
+                    status: true,
+                    name: "MEGA"
+                };
                 break;
             default:
                 readyToSend = null;
