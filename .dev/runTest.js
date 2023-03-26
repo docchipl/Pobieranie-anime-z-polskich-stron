@@ -1,8 +1,8 @@
 import scopeAnime from "../index.js";
 
 console.log("FrixySubs: ", await scopeAnime({
-    anime: "mob-psycho-100-iii",
-    episode: 6,
+    anime: "onii-chan-wa-oshimai",
+    episode: 12,
     website: "frixysubs"
 }))
 
@@ -13,8 +13,8 @@ console.log("OkamiSubs: ",await scopeAnime({
 }))
 
 console.log("MioroSubs: ",await scopeAnime({
-    anime: "boku-no-hero-academia-6",
-    episode: "07",
+    anime: "blue-lock-1",
+    episode: 22,
     website: "miorosubs"
 }))
 
@@ -31,8 +31,8 @@ console.log("DayidSub: ",await scopeAnime({
 }))
 
 console.log("NanaSubs: ",await scopeAnime({
-    anime: "spy-x-family-part-2",
-    episode: 5,
+    anime: "vinland-saga-season-2",
+    episode: 9,
     website: "nanasubs"
 }))
 
@@ -73,7 +73,7 @@ console.log("GrupaMirai: ",await scopeAnime({
 }))
 
 console.log("ReikoProject: ",await scopeAnime({
-    anime: "2022/10/the-only-girl-you-havent-seen-sezon-1-pl",
+    anime: "p/liang-bu-yi",
     episode: 6,
     website: "reikoproject"
 }))

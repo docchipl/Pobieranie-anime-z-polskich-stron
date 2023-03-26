@@ -32,10 +32,10 @@ npm install @docchi/scraping-anime-websites-poland@typescript
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
-- MaouSubs - **anime-maou.pl**
+- ~~MaouSubs - **anime-maou.pl**~~
 - Okami-Subs - **okami-subs.pl**
-- NanaSubs - **nanasubs.pl**
-- Mioro-Subs - **miorosubs.7m.pl**
+- NanaSubs - **nanasubs.com**
+- Mioro-Subs - **miorosubs.pl**
 - Fumetsu - **fumetsu.pl**
 - Wbijam - **wbijam.pl**
 - Desu-Online - **desu-online.pl**
@@ -46,9 +46,8 @@ Obsługiwane strony:
 - Orfeusz Subs - **orfeusz-subs.pl**
 - Orfeusz Subs - **juniorsubs.pl**
 
-Nowe 🚀
-- Orfeusz Subs - **orfeusz-subs.pl**
-- Junior-Subs - **juniorsubs.pl**
+Aktualizacja 🛰️
+- Mioro-Subs - **miorosubs.pl** - Now returns thumbnail for episode
 
 ## Przykłady
 
@@ -120,12 +119,12 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'summertime-render',
-    episode: 12,
+    anime: 'blue-lock-1',
+    episode: 22,
     website: 'miorosubs'
   }))
   ```
-  MaouSubs: 
+  <!-- MaouSubs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -135,29 +134,19 @@ console.log(await scopeAnime({
     episode: 4,
     website: 'maousubs'
   }))
-  ```
-  DayidSub: 
-
-  ```js
-  import scopeAnime from "@docchi/scraping-anime-websites-poland";
-
-  console.log(await scopeAnime({
-    anime: 'Tensei-Kenja-no-Isekai-Life',
-    episode: '01',
-    website: 'dayidsub'
-  }))
-  ```
+  ``` -->
   NanaSubs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'mob-psycho-iii',
-    episode: 3,
+    anime: 'vinland-saga-season-2',
+    episode: 9,
     website: 'nanasubs'
   }))
   ```
+
   Fumetsu: 
 
   ```js
@@ -169,6 +158,7 @@ console.log(await scopeAnime({
     website: 'fumetsu'
   }))
   ```
+
   KatherineMay: 
 
   ```js
@@ -180,6 +170,7 @@ console.log(await scopeAnime({
     website: "kathsubs"
   }))
   ```
+
   CDA: 
 
   *note: W przypadku cda warto spojrzeć do dokumentacji [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping/cda)*
@@ -195,6 +186,7 @@ console.log(await scopeAnime({
     website: "cda"
   }))
   ```
+
   Grupa-mirai: 
 
   ```js
@@ -206,18 +198,21 @@ console.log(await scopeAnime({
     website: "mirai"
   }))
   ```
-    Reiko Project: 
+
+  Reiko Project: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: "2020/10/wu-shen-zhu-zai-odcinki-pl",
+    anime: "p/liang-bu-yi",
     episode: 5,
     website: "reiko"
   }))
+
   ```
-    Orfeusz Subs: 
+
+  Orfeusz Subs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -228,7 +223,8 @@ console.log(await scopeAnime({
     website: "orfeusz"
   }))
   ```
-    Junior-Subs: 
+
+  Junior-Subs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -277,7 +273,7 @@ Wiadomość zwrotna
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
 
-[![ko-fi](https://buycoffee.to/btn/buycoffeeto-btn-primary.svg)](https://buycoffee.to/docchi)
+[![ko-fi](https://buycoffee.to/logo/buycoffee.svg)](https://buycoffee.to/docchi)
 
 # Licencja
 [MIT](https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/blob/main/LICENSE)

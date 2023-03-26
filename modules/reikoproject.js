@@ -28,7 +28,9 @@ function Reiko (anime, episode){
               const definePlayer = !link ? null : playerChecking(link.href);
 
               if(link && definePlayer){
-                if(Number(text.match(/(\d+)/)[0]) === Number(episode)){
+                const matching = text.match(/(\d+)/);
+                const defineNumber = Number(matching === null ? 9999 : matching[0]);
+                if(defineNumber === Number(episode)){
                   episode_url_cleaning.push({
                     player: definePlayer.name,
                     url: link.href
@@ -36,7 +38,6 @@ function Reiko (anime, episode){
                 }
               }
             }
-            return;
           })
         )
 

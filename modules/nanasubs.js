@@ -8,13 +8,12 @@ virtualConsole.on("error", () => {
 });
 
 function NanaSubs (anime, episode){
-    const request = axios.get(`https://nanasubs.fun/anime/${anime}/odcinek-${episode}`, {
+    const request = axios.get(`https://nanasubs.com/anime/${anime}/odcinek-${episode}`, {
         headers: {
-          Referer: `https://nanasubs.fun/anime/${anime}/odcinek-${episode}`,
+          Referer: `https://nanasubs.com/anime/${anime}/odcinek-${episode}`,
           'X-Requested-With': 'XMLHttpRequest'
         }
       }).then(async function (response) {
-        //console.log(response.data)
         const dom = new JSDOM(response.data, { virtualConsole });
         const nanaArray = dom.window.document.querySelectorAll(`script[type="application/ld+json"]`);
         const nanaData = JSON.parse(Array.from(nanaArray)[1].textContent)
@@ -24,7 +23,6 @@ function NanaSubs (anime, episode){
 
         await Promise.all(
           Array.from(items).map(async function(x) {
-
             episode_url_cleaning.push({
                 player: x.getAttribute("data-player"),
                 url: x.getAttribute("data-player-url")

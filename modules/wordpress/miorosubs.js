@@ -1,5 +1,6 @@
-import axios from 'axios';
-import jsdom from 'jsdom';
+import axios from "axios";
+import jsdom from "jsdom";
+import { MioroSubsAPI } from "../api/index.js";
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
@@ -7,41 +8,59 @@ virtualConsole.on("error", () => {
   // No-op to skip console errors.
 });
 
-function MioroSubs (anime, episode){
-    const request = axios.get(`https://miorosubs.7m.pl/${anime}-odcinek-${episode}`, {
-        headers: {
-          Referer: `https://miorosubs.7m.pl/${anime}-odcinek-${episode}`,
-          'X-Requested-With': 'XMLHttpRequest'
-        }
-      }).then(async function (response) {
-        const dom = new JSDOM(response.data, { virtualConsole });
+function MioroSubs(anime, episode) {
+  const request = axios
+    .get(`https://miorosubs.pl/episodes/${anime}x${episode}`, {
+      headers: {
+        Referer: `https://miorosubs.pl/episodes/${anime}x${episode}`,
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+    .then(async function (response) {
+      const dom = new JSDOM(response.data, { virtualConsole });
 
-        let episode_url_cleaning = [];
-        const items = dom.window.document.querySelector('#mirror').querySelectorAll('option');
+      let episode_url_cleaning = [];
+      const thumbnail = dom.window.document.querySelector(".g-item a");
+      const items = dom.window.document
+        .querySelector("#playeroptionsul")
+        .querySelectorAll("li.dooplay_player_option");
 
-        Array.from(items).map(function(x) {
-          if(x.textContent.split(' ')[0].toLowerCase() === "wybierz") return;
+      await Promise.all(
+        Array.from(items).map(async function (x) {
+          const playerName = x.querySelector(".title").textContent;
+          const playerInfo = await MioroSubsAPI(
+            "doo_player_ajax",
+            x.getAttribute("data-post"),
+            x.getAttribute("data-nume"),
+            x.getAttribute("data-type")
+          );
 
-            episode_url_cleaning.push({
-              player: x.textContent.split(' ')[0],
-              url: x.value
-            });
+          if (playerInfo === null) {
+            return;
+          }
+          episode_url_cleaning.push({
+            player: playerInfo.embed_url,
+            url: playerName,
+          });
         })
+      );
 
-        return ({
-          status: 200, 
-          message: "Success",
-          episode_url: episode_url_cleaning,
-          episode_next_url: Number(episode)+1
-        })
-      }).catch(err => {
-        //console.log(err)
-        return ({
-            status: 500,
-            message: "Something went wrong!"
-        })
-      });
+      return {
+        status: 200,
+        message: "Success",
+        episode_thumbnail: thumbnail ? thumbnail.href : null,
+        episode_url: episode_url_cleaning,
+        episode_next_url: Number(episode) + 1,
+      };
+    })
+    .catch((err) => {
+      // console.log(err)
+      return {
+        status: 500,
+        message: "Something went wrong!",
+      };
+    });
 
-      return (request);
+  return request;
 }
 export default MioroSubs;
