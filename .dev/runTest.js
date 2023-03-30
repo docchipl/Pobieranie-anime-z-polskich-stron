@@ -18,10 +18,10 @@ console.log("MioroSubs: ",await scopeAnime({
     website: "miorosubs"
 }))
 
-console.log("MaouSubs: ",await scopeAnime({
-    anime: "kumichou-musume-to-sewagakari",
-    episode: 2,
-    website: "maousubs"
+console.log("DragonSubs: ",await scopeAnime({
+    anime: "saikyou-onmyouji-no-isekai-tenseiki",
+    episode: 1,
+    website: "dragon"
 }))
 
 console.log("DayidSub: ",await scopeAnime({

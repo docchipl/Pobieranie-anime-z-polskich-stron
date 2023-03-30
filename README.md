@@ -32,7 +32,7 @@ npm install @docchi/scraping-anime-websites-poland@typescript
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
-- ~~MaouSubs - **anime-maou.pl**~~
+- DraGoN-Subs - **dragonsubs.pl**
 - Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.com**
 - Mioro-Subs - **miorosubs.pl**
@@ -124,17 +124,17 @@ console.log(await scopeAnime({
     website: 'miorosubs'
   }))
   ```
-  <!-- MaouSubs: 
+  DraGoN-Subs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'yofukashi-no-uta',
-    episode: 4,
-    website: 'maousubs'
+    anime: 'saikyou-onmyouji-no-isekai-tenseiki',
+    episode: 1,
+    website: 'dragonsubs'
   }))
-  ``` -->
+  ```
   NanaSubs: 
 
   ```js

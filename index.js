@@ -19,8 +19,8 @@ function scopeAnime({anime, episode, website, user, folder, type, spaces, keywor
       case 'mioro':
         data = MioroSubs(anime, episode);
         break;
-      case 'maousubs':
-      case 'maou':
+      case 'dragonsubs':
+      case 'dragon':
         data = MaouSubs(anime, episode);
         break;
       // case 'dayidsub':
