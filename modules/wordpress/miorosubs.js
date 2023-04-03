@@ -39,8 +39,8 @@ function MioroSubs(anime, episode) {
             return;
           }
           episode_url_cleaning.push({
-            player: playerInfo.embed_url,
-            url: playerName,
+            player: playerName,
+            url: playerInfo.embed_url,
           });
         })
       );
