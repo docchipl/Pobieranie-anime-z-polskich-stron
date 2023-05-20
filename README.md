@@ -2,7 +2,7 @@
 
 Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1061424910662119474/Docchi.png)
+![Okładka](https://github.com/docchipl/.github/assets/34755589/9b14bb52-08ba-4a45-992b-fc2e10cf226a)
 
 ## Kontakt
 
@@ -44,10 +44,7 @@ Obsługiwane strony:
 - Grupa-mirai - **grupa-mirai.pl**
 - Reiko Project - **reikoproject.blogspot.com**
 - Orfeusz Subs - **orfeusz-subs.pl**
-- Orfeusz Subs - **juniorsubs.pl**
-
-Aktualizacja 🛰️
-- Mioro-Subs - **miorosubs.pl** - Now returns thumbnail for episode
+- Junior-Subs - **juniorsubs.pl**
 
 ## Przykłady
 
