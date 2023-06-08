@@ -1,4 +1,4 @@
-var LinkToPlayer = function(props) {
+const LinkToPlayer = function(props) {
     if (props.includes("https://") || props.includes("http://")) {
         let domain = new URL(props);
         let host = domain.hostname.toLocaleLowerCase();

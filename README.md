@@ -46,6 +46,9 @@ Obsługiwane strony:
 - Orfeusz Subs - **orfeusz-subs.pl**
 - Junior-Subs - **juniorsubs.pl**
 
+Nowe:
+- Paldea - **paldea.pl**
+
 ## Przykłady
 
 Dokumentacja: [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping)
@@ -231,6 +234,17 @@ console.log(await scopeAnime({
     anime: "yuutousei-ayaka-no-uraomote",
     episode: "01",
     website: "junior"
+  }))
+  ```
+
+  Paldea: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    episode: "hz001",
+    website: "paldea"
   }))
   ```
 </details>

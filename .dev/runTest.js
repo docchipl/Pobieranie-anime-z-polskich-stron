@@ -90,3 +90,8 @@ console.log("Junior-Subs: ",await scopeAnime({
     episode: "01",
     website: "junior"
 }))
+
+console.log("Paldea: ", await scopeAnime({
+    episode: "hz001",
+    website: "paldea"
+}))

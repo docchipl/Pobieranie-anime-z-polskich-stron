@@ -1,5 +1,6 @@
 import axios from "axios";
 import jsdom from "jsdom";
+import playerName from "../../functions/playerName.js";
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
@@ -7,11 +8,12 @@ virtualConsole.on("error", () => {
   // No-op to skip console errors.
 });
 
-export default function Desuonline(anime, episode) {
+
+export default function Paldea(episode) {
   const request = axios
-    .get(`https://desu-online.pl/${anime}-odcinek-${episode}`, {
+    .get(`https://paldea.pl/odcinek/${episode}`, {
       headers: {
-        Referer: `https://desu-online.pl/${anime}-odcinek-${episode}`,
+        Referer: `https://paldea.pl/odcinek/${episode}`,
         "X-Requested-With": "XMLHttpRequest",
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
@@ -19,24 +21,35 @@ export default function Desuonline(anime, episode) {
     })
     .then(async function (response) {
       const dom = new JSDOM(response.data, { virtualConsole });
-      const items = dom.window.document.querySelectorAll(
-        ".mobius select.mirror option"
-      );
       let episode_url_cleaning = [];
+      let episode_next_url = null;
+
+      const items = dom.window.document.querySelectorAll(".video-container");
+      const urls = dom.window.document.querySelectorAll(".post-content .fusion-layout-column .fusion-column-wrapper .fusion-align-block a.fusion-button");
+
+      await Promise.all(
+        Array.from(urls).map(async function (x) {
+          const splitURL = x.href.split("/");
+          if(!splitURL.includes("odcinek")){
+            return;
+          }
+
+          if(splitURL.pop() === episode){
+            return
+          }
+
+          episode_next_url = splitURL.pop();
+
+        })
+      )
 
       await Promise.all(
         Array.from(items).map(async function (x) {
-          if (x.textContent.toLocaleLowerCase().includes("wybierz")) return;
-          const player_url = Buffer.from(x.value, "base64")
-            .toString("utf8")
-            .match(
-              /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/gim
-            );
+          const player = x.querySelector("iframe").src;
 
           episode_url_cleaning.push({
-            player: x.textContent.toUpperCase().replaceAll("\n", "").trim(),
-            url:
-              player_url && player_url.length <= 1 ? player_url[0] : player_url,
+            player: playerName(player),
+            url: player,
           });
         })
       );
@@ -45,11 +58,10 @@ export default function Desuonline(anime, episode) {
         status: 200,
         message: "Success",
         episode_url: episode_url_cleaning,
-        episode_next_url: episode + 1,
+        episode_next_url: episode_next_url,
       };
     })
     .catch((err) => {
-      //console.log(err)
       return {
         status: 500,
         message: "Something went wrong!",
