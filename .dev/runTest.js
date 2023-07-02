@@ -95,3 +95,9 @@ console.log("Paldea: ", await scopeAnime({
     episode: "hz001",
     website: "paldea"
 }))
+
+console.log("MakiSubs: ",await scopeAnime({
+    anime: "jitsu-wa-ore-saikyou-deshita-1",
+    episode: 1,
+    website: "maki"
+}))

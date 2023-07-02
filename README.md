@@ -48,6 +48,7 @@ Obsługiwane strony:
 
 Nowe:
 - Paldea - **paldea.pl**
+- MakiSubs - **makisubs.online**
 
 ## Przykłady
 
@@ -245,6 +246,18 @@ console.log(await scopeAnime({
   console.log(await scopeAnime({
     episode: "hz001",
     website: "paldea"
+  }))
+  ```
+  
+  MakiSubs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "jitsu-wa-ore-saikyou-deshita-1",
+    episode: 1,
+    website: "maki"
   }))
   ```
 </details>

@@ -14,6 +14,7 @@ import {
   MioroSubs,
   JuniorSubs,
   Paldea,
+  MakiSubs
 } from "./modules/wordpress/index.js";
 import { CDA, CDAProfile } from "./modules/cda/index.js";
 
@@ -94,6 +95,10 @@ function scopeAnime({
       break;
     case "paldea":
       data = Paldea(episode);
+      break;
+    case "makisubs":
+    case "maki":
+      data = MakiSubs(anime, episode);
       break;
     default:
       data = {
