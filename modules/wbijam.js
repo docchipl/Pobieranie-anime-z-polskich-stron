@@ -1,6 +1,6 @@
 import axios from 'axios';
 import jsdom from 'jsdom';
-import {secondRequest} from '../functions/index.js';
+import {WbijamAPI} from '../api/index.js';
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
@@ -43,7 +43,7 @@ function Wbijam (anime, episode){
 
             if(player_info.player_name.toLocaleLowerCase() === "vk") return;
 
-            const requestPlayer = await secondRequest(player_info);
+            const requestPlayer = await WbijamAPI(player_info);
             if(!requestPlayer.data) return;
 
             const player_url = new JSDOM(requestPlayer.data, { virtualConsoleRequest }).window.document.querySelector("center iframe").src;

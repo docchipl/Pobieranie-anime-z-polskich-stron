@@ -43,7 +43,7 @@ function Grupamirai (anime, episode){
             });
         }
 
-        if (episode_url_cleaning.length === 0){
+        if (episode_url_cleaning.length <= 0){
             return ({
                 status: 500,
                 message: "Something went wrong!"

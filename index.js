@@ -8,17 +8,18 @@ import {
   Reikoproject,
   OrfeuszSubs,
 } from "./modules/index.js";
-import { FrixySubs, DocchiSubs, MaouSubs } from "./modules/api/index.js";
+import { FrixySubsAPI, DocchiSubsAPI, MaouSubsAPI } from "./api/index.js";
 import {
   Desuonline,
   MioroSubs,
   JuniorSubs,
   Paldea,
-  MakiSubs
+  MakiSubs,
 } from "./modules/wordpress/index.js";
 import { CDA, CDAProfile } from "./modules/cda/index.js";
+import { Bitly } from "./shorteners/index.js";
 
-function scopeAnime({
+export default function scrape({
   anime,
   episode,
   website,
@@ -27,86 +28,83 @@ function scopeAnime({
   type,
   spaces,
   keyword,
+  url,
 }) {
-  let data;
   switch (website) {
     case "frixysubs":
-    case "frixy":
-      data = FrixySubs(anime, episode);
-      break;
+    case "frixy": {
+      return FrixySubsAPI(anime, episode);
+    }
     case "okamisubs":
-    case "okami":
-      data = OkamiSubs(anime, episode);
-      break;
+    case "okami": {
+      return OkamiSubs(anime, episode);
+    }
     case "miorosubs":
-    case "mioro":
-      data = MioroSubs(anime, episode);
-      break;
+    case "mioro": {
+      return MioroSubs(anime, episode);
+    }
     case "dragonsubs":
-    case "dragon":
-      data = MaouSubs(anime, episode);
-      break;
-    // case 'dayidsub':
-    // case 'dayid':
-    //   data = DayidSub(anime, episode);
-    //   break;
+    case "dragon": {
+      return MaouSubsAPI(anime, episode);
+    }
     case "nanasubs":
-    case "nana":
-      data = NanaSubs(anime, episode);
-      break;
-    case "fumetsu":
-      data = Fumetsu(anime, episode);
-      break;
+    case "nana": {
+      return NanaSubs(anime, episode);
+    }
+    case "fumetsu": {
+      return Fumetsu(anime, episode);
+    }
     case "docchisubs":
-    case "docchi":
-      data = DocchiSubs(anime, episode);
-      break;
-    case "wbijam":
-      data = Wbijam(anime, episode);
-      break;
+    case "docchi": {
+      return DocchiSubsAPI(anime, episode);
+    }
+    case "wbijam": {
+      return Wbijam(anime, episode);
+    }
     case "desuonline":
-    case "desu":
-      data = Desuonline(anime, episode);
-      break;
-    case "cda":
-      data = CDA(user, folder, type, spaces, episode);
-      break;
-    case "cdaprofile":
-      data = CDAProfile(user, keyword, type, spaces, episode);
-      break;
-    case "kathsubs":
-      data = Kathsubs(anime, episode);
-      break;
+    case "desu": {
+      return Desuonline(anime, episode);
+    }
+    case "cda": {
+      return CDA(user, folder, type, spaces, episode);
+    }
+    case "cdaprofile": {
+      return CDAProfile(user, keyword, type, spaces, episode);
+    }
+    case "kathsubs": {
+      return Kathsubs(anime, episode);
+    }
     case "grupamirai":
-    case "mirai":
-      data = Grupamirai(anime, episode);
-      break;
+    case "mirai": {
+      return Grupamirai(anime, episode);
+    }
     case "reikoproject":
-    case "reiko":
-      data = Reikoproject(anime, episode);
-      break;
+    case "reiko": {
+      return Reikoproject(anime, episode);
+    }
     case "orfeuszsubs":
-    case "orfeusz":
-      data = OrfeuszSubs(anime, episode);
-      break;
+    case "orfeusz": {
+      return OrfeuszSubs(anime, episode);
+    }
     case "juniorsubs":
-    case "junior":
-      data = JuniorSubs(folder, anime, episode);
-      break;
-    case "paldea":
-      data = Paldea(episode);
-      break;
+    case "junior": {
+      return JuniorSubs(folder, anime, episode);
+    }
+    case "paldea": {
+      return Paldea(episode);
+    }
     case "makisubs":
-    case "maki":
-      data = MakiSubs(anime, episode);
-      break;
-    default:
-      data = {
+    case "maki": {
+      return MakiSubs(anime, episode);
+    }
+    case "bitly": {
+      return Bitly(url);
+    }
+    default: {
+      return {
         status: 404,
         message: "Group not found",
       };
+    }
   }
-
-  return data;
 }
-export default scopeAnime;

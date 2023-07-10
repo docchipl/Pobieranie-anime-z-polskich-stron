@@ -1,6 +1,6 @@
 import axios from "axios";
 import jsdom from "jsdom";
-import { MioroSubsAPI } from "../api/index.js";
+import {MioroSubsAPI} from '../../api/index.js';
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();

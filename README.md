@@ -2,7 +2,7 @@
 
 Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://github.com/docchipl/.github/assets/34755589/9b14bb52-08ba-4a45-992b-fc2e10cf226a)
+![Okładka](https://i.ibb.co/4VfzDT4/1500x500.png)
 
 ## Kontakt
 
@@ -15,10 +15,6 @@ Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google
 Javascript:
 ```bash
 npm install @docchi/scraping-anime-websites-poland
-```
-Typescript:
-```bash
-npm install @docchi/scraping-anime-websites-poland@typescript
 ```
 
 ## Obsługiwane strony
@@ -45,14 +41,12 @@ Obsługiwane strony:
 - Reiko Project - **reikoproject.blogspot.com**
 - Orfeusz Subs - **orfeusz-subs.pl**
 - Junior-Subs - **juniorsubs.pl**
-
-Nowe:
 - Paldea - **paldea.pl**
 - MakiSubs - **makisubs.online**
 
 ## Przykłady
 
-Dokumentacja: [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping)
+Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl/docchi/scraping)
 
 
 FrixySubs: 
@@ -69,7 +63,7 @@ console.log(await scopeAnime({
 <details>
   <summary>Więcej przykładów</summary>
 
-  DocchiSubs: 
+  Docchi: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -92,6 +86,7 @@ console.log(await scopeAnime({
     website: 'wbijam'
   }))
   ```
+
   Desu-Online: 
 
   ```js
@@ -103,6 +98,7 @@ console.log(await scopeAnime({
     website: 'desuonline'
   }))
   ```
+
   Okami-Subs: 
 
   ```js
@@ -114,6 +110,7 @@ console.log(await scopeAnime({
     website: 'okamisubs'
   }))
   ```
+
   Mioro-Subs: 
 
   ```js
@@ -125,6 +122,7 @@ console.log(await scopeAnime({
     website: 'miorosubs'
   }))
   ```
+
   DraGoN-Subs: 
 
   ```js
@@ -136,6 +134,7 @@ console.log(await scopeAnime({
     website: 'dragonsubs'
   }))
   ```
+
   NanaSubs: 
 
   ```js
@@ -174,7 +173,7 @@ console.log(await scopeAnime({
 
   CDA: 
 
-  *note: W przypadku cda warto spojrzeć do dokumentacji [docs.seven7s.top](https://docs.seven7s.top/docchi/scraping/cda)*
+  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/docchi/scraping/cda)*
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
@@ -260,6 +259,7 @@ console.log(await scopeAnime({
     website: "maki"
   }))
   ```
+  
 </details>
 
 Wiadomość zwrotna

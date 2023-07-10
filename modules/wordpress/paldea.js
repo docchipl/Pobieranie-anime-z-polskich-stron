@@ -1,13 +1,12 @@
 import axios from "axios";
 import jsdom from "jsdom";
-import playerName from "../../functions/playerName.js";
+import CompilePlayerData from "../../utils/CompileEpisodeData.js";
 
 const { JSDOM } = jsdom;
 const virtualConsole = new jsdom.VirtualConsole();
 virtualConsole.on("error", () => {
   // No-op to skip console errors.
 });
-
 
 export default function Paldea(episode) {
   const request = axios
@@ -25,31 +24,33 @@ export default function Paldea(episode) {
       let episode_next_url = null;
 
       const items = dom.window.document.querySelectorAll(".video-container");
-      const urls = dom.window.document.querySelectorAll(".post-content .fusion-layout-column .fusion-column-wrapper .fusion-align-block a.fusion-button");
+      const urls = dom.window.document.querySelectorAll(
+        ".post-content .fusion-layout-column .fusion-column-wrapper .fusion-align-block a.fusion-button"
+      );
 
       await Promise.all(
         Array.from(urls).map(async function (x) {
           const splitURL = x.href.split("/");
-          if(!splitURL.includes("odcinek")){
+          if (!splitURL.includes("odcinek")) {
             return;
           }
 
-          if(splitURL.pop() === episode){
-            return
+          if (splitURL.pop() === episode) {
+            return;
           }
 
           episode_next_url = splitURL.pop();
-
         })
-      )
+      );
 
       await Promise.all(
         Array.from(items).map(async function (x) {
           const player = x.querySelector("iframe").src;
+          const data = CompilePlayerData(player);
 
           episode_url_cleaning.push({
-            player: playerName(player),
-            url: player,
+            player: data.hosting,
+            url: data.player_embed,
           });
         })
       );

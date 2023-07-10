@@ -101,3 +101,8 @@ console.log("MakiSubs: ",await scopeAnime({
     episode: 1,
     website: "maki"
 }))
+
+console.log("Bitly: ",await scopeAnime({
+    url: "https://bit.ly/masamunes2rcda2",
+    website: "bitly"
+}))
