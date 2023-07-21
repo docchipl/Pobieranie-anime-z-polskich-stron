@@ -62,5 +62,3 @@ function FumetsuSubs(anime, episode) {
   return request;
 }
 export default FumetsuSubs;
-
-console.log(await FumetsuSubs("NanatsunoMakengaShihaiSuru", 12));
