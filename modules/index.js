@@ -6,4 +6,3 @@ export { default as Wbijam } from "./wbijam.js";
 export { default as Kathsubs } from "./kathsubs.js";
 export { default as Grupamirai } from "./grupamirai.js";
 export { default as Reikoproject } from "./reikoproject.js";
-export { default as OrfeuszSubs } from "./orfeusz.js";

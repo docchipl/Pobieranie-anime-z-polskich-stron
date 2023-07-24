@@ -6,9 +6,8 @@ import {
   Kathsubs,
   Grupamirai,
   Reikoproject,
-  OrfeuszSubs,
 } from "./modules/index.js";
-import { FrixySubsAPI, DocchiSubsAPI, MaouSubsAPI } from "./api/index.js";
+import { FrixySubsAPI, DocchiSubsAPI, MaouSubsAPI, OrfeuszAPI } from "./api/index.js";
 import {
   Desuonline,
   MioroSubs,
@@ -84,7 +83,7 @@ export default function scrape({
     }
     case "orfeuszsubs":
     case "orfeusz": {
-      return OrfeuszSubs(anime, episode);
+      return OrfeuszAPI(anime, episode);
     }
     case "juniorsubs":
     case "junior": {
