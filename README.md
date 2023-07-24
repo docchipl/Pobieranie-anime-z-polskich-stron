@@ -218,7 +218,7 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: "buddy-daddies",
+    anime: 25,
     episode: 1,
     website: "orfeusz"
   }))
