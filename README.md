@@ -2,7 +2,7 @@
 
 Siema, jeśli szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1019238100339269733/Docchi_1.png)
+![Okładka](https://i.ibb.co/4VfzDT4/1500x500.png)
 
 ## Kontakt
 
@@ -12,20 +12,19 @@ Siema, jeśli szukasz gotowego kodu do pobierania linków do cda, mega, google d
 
 ## Instalacja
 
-[Node.js](https://nodejs.org/en/) wymagane
 ```bash
 npm install @docchi/scraping-anime-websites-poland
 ```
 
-## Jak używać
+## Obsługiwane strony
 
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
+<!-- - DraGoN-Subs - **dragonsubs.pl** -->
 - Okami-Subs - **okami-subs.pl**
-- MaouSubs - **maousubs.pythonanywhere.com**
-- DayidSub - **dayidsub.pl**
-- NanaSubs - **nanasubs.pl**
+- NanaSubs - **nanasubs.com**
+- Mioro-Subs - **miorosubs.pl**
 - Fumetsu - **fumetsu.pl**
 - Wbijam - **wbijam.pl**
 <!-- - Desu-Online - **desu-online.pl** -->
@@ -40,7 +39,7 @@ Obsługiwane strony:
 
 ## Przykłady
 
-Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl)
+Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl/scraper)
 
 
 FrixySubs: 
@@ -50,21 +49,21 @@ import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
 console.log(await scopeAnime({
     anime: 'spy-x-family',
-    episode: '1',
+    episode: 1,
     website: 'frixysubs'
 }))
 ```
 <details>
-  <summary>Reszta</summary>
+  <summary>Więcej przykładów</summary>
 
-  DocchiSubs: 
+  Docchi: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
     anime: 'isekai-yakkyoku-49438',
-    episode: '5',
+    episode: 5,
     website: 'docchi'
   }))
   ```
@@ -104,28 +103,43 @@ console.log(await scopeAnime({
     website: 'okamisubs'
   }))
   ```
+
   Mioro-Subs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'summertime-render-odcinek',
-    episode: '12',
+    anime: 'blue-lock-1',
+    episode: 22,
     website: 'miorosubs'
   }))
   ```
+
+  <!-- DraGoN-Subs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 'saikyou-onmyouji-no-isekai-tenseiki',
+    episode: 1,
+    website: 'dragonsubs'
+  }))
+  ``` -->
+
   NanaSubs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: 'engage-kiss',
-    episode: '855',
+    anime: 'vinland-saga-season-2',
+    episode: 9,
     website: 'nanasubs'
   }))
   ```
+
   Fumetsu: 
 
   ```js
@@ -133,7 +147,7 @@ console.log(await scopeAnime({
 
   console.log(await scopeAnime({
     anime: 'TatenoYuushanoNariagari2-kiss',
-    episode: '1',
+    episode: 1,
     website: 'fumetsu'
   }))
   ```
@@ -238,7 +252,6 @@ console.log(await scopeAnime({
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
   console.log(await scopeAnime({
-    anime: "empty",
     episode: "hz001",
     website: "paldea"
   }))
