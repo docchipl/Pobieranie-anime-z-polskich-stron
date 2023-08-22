@@ -1,0 +1,26 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: 🚀 [TypeScript] release
+
+on:
+  push:
+    branches:
+    - typescript
+
+jobs:
+    release:
+        name: 🚀 [TypeScript] release
+        runs-on: ubuntu-latest
+        steps:
+            - name: 📚 [TypeScript] checkout
+              uses: actions/checkout@v3
+            - name: 🟢 [TypeScript]  node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '16.x'
+                  registry-url: https://registry.npmjs.org
+            - name: 🚀 [TypeScript] publish
+              run: npm publish --tag typescript --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

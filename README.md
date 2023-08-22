@@ -1,6 +1,6 @@
 # @docchi/scraping-anime-websites-poland
 
-Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
+Siema, jeśli szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
 ![Okładka](https://cdn.discordapp.com/attachments/721911008213598238/1019238100339269733/Docchi_1.png)
 
@@ -19,23 +19,31 @@ npm install @docchi/scraping-anime-websites-poland
 
 ## Jak używać
 
-<sub>Nie zapomnij dodać do *package.json*
-```json
-"type": "module"
-```
-</sub>
-
-Obsługiwane strony: 
-- FrixySubs - **frixysubs.pl**
+Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
-- Mioro-Subs - **miorosubs.7m.pl**
+- FrixySubs - **frixysubs.pl**
 - Okami-Subs - **okami-subs.pl**
 - MaouSubs - **maousubs.pythonanywhere.com**
 - DayidSub - **dayidsub.pl**
 - NanaSubs - **nanasubs.pl**
 - Fumetsu - **fumetsu.pl**
+- Wbijam - **wbijam.pl**
+<!-- - Desu-Online - **desu-online.pl** -->
+- CDA - **cda.pl**
+- KatherineMay - **kathsubs.blogspot.com**
+- Grupa-mirai - **grupa-mirai.pl**
+- Reiko Project - **reikoproject.blogspot.com**
+- Orfeusz Subs - **orfeusz-subs.pl**
+- Junior-Subs - **juniorsubs.pl**
+- Paldea - **paldea.pl**
+- MakiSubs - **makisubs.online**
 
-Przykłd FrixySubs: 
+## Przykłady
+
+Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl)
+
+
+FrixySubs: 
 
 ```js
 import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -60,6 +68,31 @@ console.log(await scopeAnime({
     website: 'docchi'
   }))
   ```
+  Wbijam: 
+
+  *note: w anime trzeba podać subdomene*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "danmachi",
+    episode: 'czwarta_seria-10',
+    website: 'wbijam'
+  }))
+  ```
+
+  <!-- Desu-Online: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "isekai-meikyuu-de-harem-wo",
+    episode: 1,
+    website: 'desuonline'
+  }))
+  ``` -->
+
   Okami-Subs: 
 
   ```js
@@ -80,28 +113,6 @@ console.log(await scopeAnime({
     anime: 'summertime-render-odcinek',
     episode: '12',
     website: 'miorosubs'
-  }))
-  ```
-  MaouSubs: 
-
-  ```js
-  import scopeAnime from "@docchi/scraping-anime-websites-poland";
-
-  console.log(await scopeAnime({
-    anime: '',
-    episode: 'yofukashi-no-uta-4',
-    website: 'maousubs'
-  }))
-  ```
-  DayidSub: 
-
-  ```js
-  import scopeAnime from "@docchi/scraping-anime-websites-poland";
-
-  console.log(await scopeAnime({
-    anime: 'Tensei-Kenja-no-Isekai-Life',
-    episode: '01',
-    website: 'dayidsub'
   }))
   ```
   NanaSubs: 
@@ -126,6 +137,125 @@ console.log(await scopeAnime({
     website: 'fumetsu'
   }))
   ```
+
+  KatherineMay: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "incomparable-demon-king",
+    episode: 22,
+    website: "kathsubs"
+  }))
+  ```
+
+  CDA Folder: 
+
+  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/scraper/cda-folder)*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    user: "docchi",
+    folder: 37956235,
+    type: "spaces",
+    spaces: "3",
+    episode: 1,
+    website: "cda"
+  }))
+  ```
+
+    CDA Profile: 
+
+  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/scraper/cda-profile)*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    user: "SziszoweSubki",
+    keyword: "Dogs",
+    type: "spaces",
+    spaces: 5,
+    episode: 4,
+    website: "cdaprofile",
+  }))
+  ```
+
+  Grupa-mirai: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "db",
+    episode: 5,
+    website: "mirai"
+  }))
+  ```
+
+  Reiko Project: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "p/liang-bu-yi",
+    episode: 5,
+    website: "reiko"
+  }))
+
+  ```
+
+  Orfeusz Subs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: 25,
+    episode: 1,
+    website: "orfeusz"
+  }))
+  ```
+
+  Junior-Subs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    folder: "hentai",
+    anime: "yuutousei-ayaka-no-uraomote",
+    episode: "01",
+    website: "junior"
+  }))
+  ```
+
+  Paldea: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "empty",
+    episode: "hz001",
+    website: "paldea"
+  }))
+  ```
+  
+  MakiSubs: 
+
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    anime: "jitsu-wa-ore-saikyou-deshita-1",
+    episode: 1,
+    website: "maki"
+  }))
+  ```
+  
 </details>
 
 Wiadomość zwrotna
@@ -156,13 +286,16 @@ Wiadomość zwrotna
 ```
 # Kody zwrotne
 
-- 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 - 200 - Wszystko przeszło bez żadnego problemu.
+- 204 - Strona się załadowała, ale brakuje na niej odtwarzaczy (wbijam.pl).
+- 404 - Nie wspierana strona.
+- 400 - Brakuje jakichś parametrów.
+- 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/docchi)
+[![buycoffee.to](https://i.ibb.co/X8djLyj/Group-37.png)](https://buycoffee.to/docchi)
 
 # Licencja
 [MIT](https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/blob/main/LICENSE)
