@@ -6,7 +6,7 @@ name: 🚀 [TypeScript] release
 on:
   push:
     branches:
-    - typescript
+    - Typescript
 
 jobs:
     release:
