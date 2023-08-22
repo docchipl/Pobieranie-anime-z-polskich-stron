@@ -1,7 +1,7 @@
-import { ServiceCDAFolder, ServiceCDAProfile } from "./services/CDA/index";
-import { DocchiAPI, FrixySubsAPI, OrfeuszSubsAPI } from "./apis/index";
-import { ServiceJuniorSubs, ServiceMakiSubs, ServiceMioroSubs, ServicePaldea, } from "./services/wordpress/index";
-import { ServiceFumetsu, ServiceGrupaMirai, ServiceKathSubs, ServiceNanaSubs, ServiceOkamiSubs, ServiceReikoProject, ServiceWbijam, } from "./services/index";
+import { ServiceCDAFolder, ServiceCDAProfile } from "./services/CDA/index.js";
+import { DocchiAPI, FrixySubsAPI, OrfeuszSubsAPI } from "./apis/index.js";
+import { ServiceJuniorSubs, ServiceMakiSubs, ServiceMioroSubs, ServicePaldea, } from "./services/wordpress/index.js";
+import { ServiceFumetsu, ServiceGrupaMirai, ServiceKathSubs, ServiceNanaSubs, ServiceOkamiSubs, ServiceReikoProject, ServiceWbijam, } from "./services/index.js";
 export default async function runScript({ anime, episode, website, user, folder, type, spaces, keyword, }) {
     if (!website) {
         return {

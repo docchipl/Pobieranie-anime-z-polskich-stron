@@ -1,12 +1,12 @@
-import { ServiceCDAFolder, ServiceCDAProfile } from "./services/CDA/index";
-import { DocchiAPI, FrixySubsAPI, OrfeuszSubsAPI } from "./apis/index";
+import { ServiceCDAFolder, ServiceCDAProfile } from "./services/CDA/index.js";
+import { DocchiAPI, FrixySubsAPI, OrfeuszSubsAPI } from "./apis/index.js";
 import {
   ServiceDesuOnline,
   ServiceJuniorSubs,
   ServiceMakiSubs,
   ServiceMioroSubs,
   ServicePaldea,
-} from "./services/wordpress/index";
+} from "./services/wordpress/index.js";
 import {
   ServiceFumetsu,
   ServiceGrupaMirai,
@@ -15,7 +15,7 @@ import {
   ServiceOkamiSubs,
   ServiceReikoProject,
   ServiceWbijam,
-} from "./services/index";
+} from "./services/index.js";
 
 interface ResponseSource {
   status: number;

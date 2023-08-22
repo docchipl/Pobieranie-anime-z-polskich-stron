@@ -1,6 +1,6 @@
 import axios from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
-import CompilePlayerData from "../utils/CompileEpisodeData";
+import CompilePlayerData from "../utils/CompileEpisodeData.js";
 const virtualConsole = new VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.

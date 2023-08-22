@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const jsdom_1 = require("jsdom");
-const CompileEpisodeData_1 = __importDefault(require("../utils/CompileEpisodeData"));
+const CompileEpisodeData_js_1 = __importDefault(require("../utils/CompileEpisodeData.js"));
 const virtualConsole = new jsdom_1.VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.
@@ -40,7 +40,7 @@ function ServiceFumetsu(anime, episode) {
             yield Promise.all(Array.from(items).map(function (x) {
                 return __awaiter(this, void 0, void 0, function* () {
                     const item = x;
-                    const data = (0, CompileEpisodeData_1.default)(item.src);
+                    const data = (0, CompileEpisodeData_js_1.default)(item.src);
                     if (!data.hosting || !data.player_embed) {
                         return;
                     }

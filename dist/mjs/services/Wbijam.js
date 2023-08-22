@@ -1,6 +1,6 @@
 import axios from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
-import { WbijamAPI } from "../apis";
+import { WbijamAPI } from "../apis/index.js";
 const virtualConsole = new VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.

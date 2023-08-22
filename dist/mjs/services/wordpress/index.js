@@ -1,5 +1,5 @@
-export { default as ServiceMioroSubs } from "./MioroSubs";
-export { default as ServiceMakiSubs } from "./MakiSubs";
-export { default as ServicePaldea } from "./Paldea";
-export { default as ServiceDesuOnline } from "./DesuOnline";
-export { default as ServiceJuniorSubs } from "./JuniorSubs";
+export { default as ServiceMioroSubs } from "./MioroSubs.js";
+export { default as ServiceMakiSubs } from "./MakiSubs.js";
+export { default as ServicePaldea } from "./Paldea.js";
+export { default as ServiceDesuOnline } from "./DesuOnline.js";
+export { default as ServiceJuniorSubs } from "./JuniorSubs.js";

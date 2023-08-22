@@ -1,4 +1,4 @@
-import { MioroSubsAPI } from "../../apis/index";
+import { MioroSubsAPI } from "../../apis/index.js";
 import axios from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
 const tNFun = (tn) => {

@@ -1,5 +1,5 @@
-import OrfeuszSubsEpisodes from "./indirect/OrfeuszSubsEpisodes";
-import OrfeuszSubsPlayers from "./indirect/OrfeuszSubsPlayers";
+import OrfeuszSubsEpisodes from "./indirect/OrfeuszSubsEpisodes.js";
+import OrfeuszSubsPlayers from "./indirect/OrfeuszSubsPlayers.js";
 
 //Return Interfaces
 interface IPlayer {

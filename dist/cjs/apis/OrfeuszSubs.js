@@ -12,18 +12,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const OrfeuszSubsEpisodes_1 = __importDefault(require("./indirect/OrfeuszSubsEpisodes"));
-const OrfeuszSubsPlayers_1 = __importDefault(require("./indirect/OrfeuszSubsPlayers"));
+const OrfeuszSubsEpisodes_js_1 = __importDefault(require("./indirect/OrfeuszSubsEpisodes.js"));
+const OrfeuszSubsPlayers_js_1 = __importDefault(require("./indirect/OrfeuszSubsPlayers.js"));
 function OrfeuszSubs(anime, episode) {
     return __awaiter(this, void 0, void 0, function* () {
-        const episodeID = yield (0, OrfeuszSubsEpisodes_1.default)(anime, episode);
+        const episodeID = yield (0, OrfeuszSubsEpisodes_js_1.default)(anime, episode);
         if (episodeID.status !== 200 || !episodeID.episode_id) {
             return {
                 status: 500,
                 message: "Something went wrong!",
             };
         }
-        const orfeusz = yield (0, OrfeuszSubsPlayers_1.default)(episode, episodeID.episode_id, episodeID.bg);
+        const orfeusz = yield (0, OrfeuszSubsPlayers_js_1.default)(episode, episodeID.episode_id, episodeID.bg);
         return orfeusz;
     });
 }

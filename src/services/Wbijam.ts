@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
-import { WbijamAPI } from "../apis";
+import { WbijamAPI } from "../apis/index.js";
 
 //Return Interfaces
 interface IPlayer {

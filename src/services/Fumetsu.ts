@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
-import CompilePlayerData from "../utils/CompileEpisodeData";
+import CompilePlayerData from "../utils/CompileEpisodeData.js";
 
 //Return Interfaces
 interface IPlayer {

@@ -1,4 +1,4 @@
-import { MioroSubsAPI } from "../../apis/index";
+import { MioroSubsAPI } from "../../apis/index.js";
 import axios, { AxiosResponse } from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
 

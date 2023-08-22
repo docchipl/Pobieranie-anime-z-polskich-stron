@@ -276,7 +276,7 @@ Wiadomość zwrotna
 {
     "status": 200,
     "message": "Success",
-    "episode_url": [
+    "episodes": [
       { 
           "player": "ok.ru", 
           "url": "https://ok.ru/videoembed/5381289871943" 

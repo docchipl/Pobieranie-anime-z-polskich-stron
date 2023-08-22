@@ -12,10 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("../../apis/index");
+const index_js_1 = require("../../apis/index.js");
 const axios_1 = __importDefault(require("axios"));
 const jsdom_1 = require("jsdom");
-const CompileEpisodeData_1 = __importDefault(require("../../utils/CompileEpisodeData"));
+const CompileEpisodeData_js_1 = __importDefault(require("../../utils/CompileEpisodeData.js"));
 const virtualConsole = new jsdom_1.VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.
@@ -37,7 +37,7 @@ function ServiceJuniorSubs(category, anime, episode) {
                     message: "Something went wrong!",
                 };
             }
-            const data = (0, CompileEpisodeData_1.default)(pIframe.src);
+            const data = (0, CompileEpisodeData_js_1.default)(pIframe.src);
             if (!data ||
                 !data.hosting ||
                 !data.player_embed ||
@@ -48,7 +48,7 @@ function ServiceJuniorSubs(category, anime, episode) {
                     message: "Something went wrong!",
                 };
             }
-            const thumbnail = yield (0, index_1.JuniorSubsAPI)(category, anime, Number(episode));
+            const thumbnail = yield (0, index_js_1.JuniorSubsAPI)(category, anime, Number(episode));
             return {
                 status: 200,
                 message: "Mission Accomplished!",

@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const jsdom_1 = require("jsdom");
-const CompileEpisodeData_1 = __importDefault(require("../utils/CompileEpisodeData"));
+const CompileEpisodeData_js_1 = __importDefault(require("../utils/CompileEpisodeData.js"));
 const virtualConsole = new jsdom_1.VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.
@@ -45,7 +45,7 @@ function ServiceReikoProject(anime, episode) {
                 const episodeNumber = text.match(/(\d+)/);
                 if (!link || !episodeNumber)
                     return;
-                const data = (0, CompileEpisodeData_1.default)(link.href);
+                const data = (0, CompileEpisodeData_js_1.default)(link.href);
                 if (!data.hosting || !data.player_embed) {
                     return;
                 }

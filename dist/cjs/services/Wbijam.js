@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const jsdom_1 = require("jsdom");
-const apis_1 = require("../apis");
+const index_js_1 = require("../apis/index.js");
 const virtualConsole = new jsdom_1.VirtualConsole();
 virtualConsole.on("error", () => {
     // No-op to skip console errors.
@@ -79,7 +79,7 @@ function ServiceWbijam(anime, episode) {
                     };
                     if (player_info.player_name.toLowerCase() === "vk")
                         return;
-                    const requestPlayer = yield (0, apis_1.WbijamAPI)(player_info);
+                    const requestPlayer = yield (0, index_js_1.WbijamAPI)(player_info);
                     if (!requestPlayer || !requestPlayer.player)
                         return;
                     episodes_cleaning.push({

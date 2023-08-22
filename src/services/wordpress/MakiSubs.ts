@@ -1,4 +1,4 @@
-import { MakiSubsAPI } from "../../apis/index";
+import { MakiSubsAPI } from "../../apis/index.js";
 import axios, { AxiosResponse } from "axios";
 import { JSDOM, VirtualConsole } from "jsdom";
 

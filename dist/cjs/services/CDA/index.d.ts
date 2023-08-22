@@ -1,2 +1,2 @@
-export { default as ServiceCDAFolder } from "./Folder";
-export { default as ServiceCDAProfile } from "./Profile";
+export { default as ServiceCDAFolder } from "./Folder.js";
+export { default as ServiceCDAProfile } from "./Profile.js";

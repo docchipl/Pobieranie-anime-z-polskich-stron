@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("./services/CDA/index");
-const index_2 = require("./apis/index");
-const index_3 = require("./services/wordpress/index");
-const index_4 = require("./services/index");
+const index_js_1 = require("./services/CDA/index.js");
+const index_js_2 = require("./apis/index.js");
+const index_js_3 = require("./services/wordpress/index.js");
+const index_js_4 = require("./services/index.js");
 function runScript({ anime, episode, website, user, folder, type, spaces, keyword, }) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!website) {
@@ -31,7 +31,7 @@ function runScript({ anime, episode, website, user, folder, type, spaces, keywor
                             message: "Missing parameters: folder, type, or spaces.",
                         };
                     }
-                    return yield (0, index_1.ServiceCDAFolder)(user, folder, type, spaces, episode);
+                    return yield (0, index_js_1.ServiceCDAFolder)(user, folder, type, spaces, episode);
                 }
                 case "cda-profile":
                 case "cdaprofile": {
@@ -41,7 +41,7 @@ function runScript({ anime, episode, website, user, folder, type, spaces, keywor
                             message: "Missing parameters: folder, type, or spaces.",
                         };
                     }
-                    return yield (0, index_1.ServiceCDAProfile)(user, keyword, type, spaces, episode);
+                    return yield (0, index_js_1.ServiceCDAProfile)(user, keyword, type, spaces, episode);
                 }
                 default:
                     return {
@@ -59,27 +59,27 @@ function runScript({ anime, episode, website, user, folder, type, spaces, keywor
         switch (website) {
             case "frixysubs":
             case "frixy": {
-                return yield (0, index_2.FrixySubsAPI)(anime, episode);
+                return yield (0, index_js_2.FrixySubsAPI)(anime, episode);
             }
             case "docchisubs":
             case "docchi":
             case "docci": {
-                return yield (0, index_2.DocchiAPI)(anime, episode);
+                return yield (0, index_js_2.DocchiAPI)(anime, episode);
             }
             case "orfeuszsubs":
             case "orfeusz": {
-                return yield (0, index_2.OrfeuszSubsAPI)(anime, episode);
+                return yield (0, index_js_2.OrfeuszSubsAPI)(anime, episode);
             }
             case "miorosubs":
             case "mioro": {
-                return yield (0, index_3.ServiceMioroSubs)(anime, episode);
+                return yield (0, index_js_3.ServiceMioroSubs)(anime, episode);
             }
             case "makisubs":
             case "maki": {
-                return yield (0, index_3.ServiceMakiSubs)(anime, episode);
+                return yield (0, index_js_3.ServiceMakiSubs)(anime, episode);
             }
             case "paldea": {
-                return yield (0, index_3.ServicePaldea)(episode);
+                return yield (0, index_js_3.ServicePaldea)(episode);
             }
             // case "desuonline":
             // case "desu": {
@@ -93,34 +93,34 @@ function runScript({ anime, episode, website, user, folder, type, spaces, keywor
                         message: "Missing parameters: folder.",
                     };
                 }
-                return yield (0, index_3.ServiceJuniorSubs)(folder, anime, episode);
+                return yield (0, index_js_3.ServiceJuniorSubs)(folder, anime, episode);
             }
             case "fumetsu": {
-                return yield (0, index_4.ServiceFumetsu)(anime, episode);
+                return yield (0, index_js_4.ServiceFumetsu)(anime, episode);
             }
             case "kath":
             case "kathsubs": {
-                return yield (0, index_4.ServiceKathSubs)(anime, episode);
+                return yield (0, index_js_4.ServiceKathSubs)(anime, episode);
             }
             case "reikoproject":
             case "reiko": {
-                return yield (0, index_4.ServiceReikoProject)(anime, episode);
+                return yield (0, index_js_4.ServiceReikoProject)(anime, episode);
             }
             case "grupamirai":
             case "mirai": {
-                return yield (0, index_4.ServiceGrupaMirai)(anime, episode);
+                return yield (0, index_js_4.ServiceGrupaMirai)(anime, episode);
             }
             case "nanasubs":
             case "nana": {
-                return yield (0, index_4.ServiceNanaSubs)(anime, episode);
+                return yield (0, index_js_4.ServiceNanaSubs)(anime, episode);
             }
             case "okamisubs":
             case "okami": {
-                return yield (0, index_4.ServiceOkamiSubs)(anime, episode);
+                return yield (0, index_js_4.ServiceOkamiSubs)(anime, episode);
             }
             case "wbijam":
             case "tmj": {
-                return yield (0, index_4.ServiceWbijam)(anime, episode);
+                return yield (0, index_js_4.ServiceWbijam)(anime, episode);
             }
             default:
                 return {

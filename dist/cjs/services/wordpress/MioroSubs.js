@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("../../apis/index");
+const index_js_1 = require("../../apis/index.js");
 const axios_1 = __importDefault(require("axios"));
 const jsdom_1 = require("jsdom");
 const tNFun = (tn) => {
@@ -58,7 +58,7 @@ function ServiceMioroSubs(anime, episode) {
                             message: "Something went wrong!",
                         };
                     }
-                    const playerInfo = yield (0, index_1.MioroSubsAPI)("doo_player_ajax", x.getAttribute("data-post"), x.getAttribute("data-nume"), x.getAttribute("data-type"));
+                    const playerInfo = yield (0, index_js_1.MioroSubsAPI)("doo_player_ajax", x.getAttribute("data-post"), x.getAttribute("data-nume"), x.getAttribute("data-type"));
                     if (playerInfo.status !== 200 || !playerInfo.player) {
                         return;
                     }
