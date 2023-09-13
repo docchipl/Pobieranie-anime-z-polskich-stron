@@ -1,6 +1,6 @@
 import { ServiceCDAFolder, ServiceCDAProfile } from "./services/CDA/index.js";
 import { DocchiAPI, FrixySubsAPI, OrfeuszSubsAPI } from "./apis/index.js";
-import { ServiceJuniorSubs, ServiceMakiSubs, ServiceMioroSubs, ServicePaldea, } from "./services/wordpress/index.js";
+import { ServiceDesuOnline, ServiceJuniorSubs, ServiceMakiSubs, ServiceMioroSubs, ServicePaldea, } from "./services/wordpress/index.js";
 import { ServiceFumetsu, ServiceGrupaMirai, ServiceKathSubs, ServiceNanaSubs, ServiceOkamiSubs, ServiceReikoProject, ServiceWbijam, } from "./services/index.js";
 export default async function runScript({ anime, episode, website, user, folder, type, spaces, keyword, }) {
     if (!website) {
@@ -69,10 +69,10 @@ export default async function runScript({ anime, episode, website, user, folder,
         case "paldea": {
             return await ServicePaldea(episode);
         }
-        // case "desuonline":
-        // case "desu": {
-        //   return await ServiceDesuOnline(anime, episode);
-        // }
+        case "desuonline":
+        case "desu": {
+            return await ServiceDesuOnline(anime, episode);
+        }
         case "juniorsubs":
         case "junior": {
             if (!folder) {

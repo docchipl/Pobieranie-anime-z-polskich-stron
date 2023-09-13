@@ -123,10 +123,10 @@ export default async function runScript({
     case "paldea": {
       return await ServicePaldea(episode);
     }
-    // case "desuonline":
-    // case "desu": {
-    //   return await ServiceDesuOnline(anime, episode);
-    // }
+    case "desuonline":
+    case "desu": {
+      return await ServiceDesuOnline(anime, episode);
+    }
     case "juniorsubs":
     case "junior": {
       if (!folder) {

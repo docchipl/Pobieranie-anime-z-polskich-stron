@@ -81,10 +81,10 @@ function runScript({ anime, episode, website, user, folder, type, spaces, keywor
             case "paldea": {
                 return yield (0, index_js_3.ServicePaldea)(episode);
             }
-            // case "desuonline":
-            // case "desu": {
-            //   return await ServiceDesuOnline(anime, episode);
-            // }
+            case "desuonline":
+            case "desu": {
+                return yield (0, index_js_3.ServiceDesuOnline)(anime, episode);
+            }
             case "juniorsubs":
             case "junior": {
                 if (!folder) {

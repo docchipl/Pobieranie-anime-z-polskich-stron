@@ -2,7 +2,7 @@
 
 Siema, jeśli szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://i.ibb.co/4VfzDT4/1500x500.png)
+![Okładka](https://i.ibb.co/MZCvVCR/Twitter-header-1.png)
 
 ## Kontakt
 
@@ -27,7 +27,7 @@ Obsługiwane strony:
 - Mioro-Subs - **miorosubs.pl**
 - Fumetsu - **fumetsu.pl**
 - Wbijam - **wbijam.pl**
-<!-- - Desu-Online - **desu-online.pl** -->
+- Desu-Online - **desu-online.pl**
 - CDA - **cda.pl**
 - KatherineMay - **kathsubs.blogspot.com**
 - Grupa-mirai - **grupa-mirai.pl**
@@ -80,7 +80,7 @@ console.log(await scopeAnime({
   }))
   ```
 
-  <!-- Desu-Online: 
+  Desu-Online: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -90,7 +90,7 @@ console.log(await scopeAnime({
     episode: 1,
     website: 'desuonline'
   }))
-  ``` -->
+  ```
 
   Okami-Subs: 
 
@@ -180,7 +180,7 @@ console.log(await scopeAnime({
   }))
   ```
 
-    CDA Profile: 
+  CDA Profile: 
 
   *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/scraper/cda-profile)*
   ```js
