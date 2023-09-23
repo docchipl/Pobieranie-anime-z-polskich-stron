@@ -15,7 +15,7 @@ export default async function MakiSubsAPI(
   player?: string;
 }> {
   try {
-    const form = new FormData();
+    const form = new URLSearchParams();
     form.append("action", action);
     form.append("post", post);
     form.append("nume", nume);

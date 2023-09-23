@@ -16,7 +16,7 @@ const axios_1 = __importDefault(require("axios"));
 function MakiSubsAPI(action, post, nume, type) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const form = new FormData();
+            const form = new URLSearchParams();
             form.append("action", action);
             form.append("post", post);
             form.append("nume", nume);
