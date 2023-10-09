@@ -1,19 +1,28 @@
 {
   "name": "@docchi/scraping-anime-websites-poland",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "Moduł do pobierania linków z popularnych polskich strony z anime",
-  "main": "index.js",
+  "main": "dist/cjs/app.js",
+  "module": "dist/mjs/app.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/app.js",
+      "require": "./dist/cjs/app.js"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/docchipl/Pobieranie-anime-z-polskich-stron.git"
   },
-  "dependencies": {
-    "axios": "^0.27.2",
-    "form-data": "^4.0.0",
-    "jsdom": "^20.0.0",
-    "unraw": "^2.0.1"
+  "scripts": {
+    "start": "node dist/cjs/app.js",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && bash ./fixup.sh",
+    "build:run": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && bash ./fixup.sh && node dist/cjs/app.js",
+    "lint": "eslint . --ext .ts"
   },
-  "type": "module",
   "bugs": {
     "url": "https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/issues"
   },
@@ -21,30 +30,48 @@
   "keywords": [
     "anime",
     "poland",
-    "frixysubs",
+    "frrixysubs",
     "okami-subs",
+    "okamisubs",
     "miorosubs",
-    "dragonsubs",
+    "mioro-subs",
+    "maousubs",
     "docchi",
     "fumetsu",
     "nanasubs",
-    "docchi",
-    "docchisubs",
-    "desu-online",
-    "desuonline",
-    "wbijam",
-    "pl",
-    "napisy",
-    "scraper",
-    "scraping",
     "cda",
+    "cdaprofile",
     "kathsubs",
-    "grupa-mirai",
+    "katherinemay",
     "reikoproject",
-    "orfeuszsubs",
+    "reiko",
+    "grupamirai",
+    "grupa-mirai",
+    "mirai",
+    "wbijam",
+    "tmj",
+    "twojamalajaponia",
+    "juniorsubs",
+    "junior-subs",
     "paldea",
-    "makisubs"
+    "makisubs",
+    "maki-subs",
+    "pl",
+    "napisy"
   ],
   "author": "3xanax",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jsdom": "^22.1.0",
+    "form-data": "^4.0.0",
+    "unraw": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6"
+  }
 }

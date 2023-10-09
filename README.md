@@ -1,8 +1,8 @@
 # @docchi/scraping-anime-websites-poland
 
-Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
+Siema, jeśli szukasz gotowego kodu do pobierania linków do cda, mega, google drive, itd z Polskich stron to idealnie trafiłeś!
 
-![Okładka](https://i.ibb.co/4VfzDT4/1500x500.png)
+![Okładka](https://i.ibb.co/MZCvVCR/Twitter-header-1.png)
 
 ## Kontakt
 
@@ -12,23 +12,16 @@ Siema, jeślisz szukasz gotowego kodu do pobierania linków do cda, mega, google
 
 ## Instalacja
 
-Javascript:
 ```bash
 npm install @docchi/scraping-anime-websites-poland
 ```
 
 ## Obsługiwane strony
 
-<sub>Nie zapomnij dodać do *package.json*
-```json
-"type": "module"
-```
-</sub>
-
 Obsługiwane strony:
 - DocchiSubs - **docchi.pl**
 - FrixySubs - **frixysubs.pl**
-- DraGoN-Subs - **dragonsubs.pl**
+<!-- - DraGoN-Subs - **dragonsubs.pl** -->
 - Okami-Subs - **okami-subs.pl**
 - NanaSubs - **nanasubs.com**
 - Mioro-Subs - **miorosubs.pl**
@@ -46,7 +39,7 @@ Obsługiwane strony:
 
 ## Przykłady
 
-Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl/docchi/scraping)
+Dokumentacja: [dev.docchi.pl](https://dev.docchi.pl/scraper)
 
 
 FrixySubs: 
@@ -123,7 +116,7 @@ console.log(await scopeAnime({
   }))
   ```
 
-  DraGoN-Subs: 
+  <!-- DraGoN-Subs: 
 
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
@@ -133,7 +126,7 @@ console.log(await scopeAnime({
     episode: 1,
     website: 'dragonsubs'
   }))
-  ```
+  ``` -->
 
   NanaSubs: 
 
@@ -171,9 +164,9 @@ console.log(await scopeAnime({
   }))
   ```
 
-  CDA: 
+  CDA Folder: 
 
-  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/docchi/scraping/cda)*
+  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/scraper/cda-folder)*
   ```js
   import scopeAnime from "@docchi/scraping-anime-websites-poland";
 
@@ -184,6 +177,22 @@ console.log(await scopeAnime({
     spaces: "3",
     episode: 1,
     website: "cda"
+  }))
+  ```
+
+  CDA Profile: 
+
+  *note: W przypadku cda warto spojrzeć do dokumentacji [dev.docchi.pl](https://dev.docchi.pl/scraper/cda-profile)*
+  ```js
+  import scopeAnime from "@docchi/scraping-anime-websites-poland";
+
+  console.log(await scopeAnime({
+    user: "SziszoweSubki",
+    keyword: "Dogs",
+    type: "spaces",
+    spaces: 5,
+    episode: 4,
+    website: "cdaprofile",
   }))
   ```
 
@@ -267,7 +276,7 @@ Wiadomość zwrotna
 {
     "status": 200,
     "message": "Success",
-    "episode_url": [
+    "episodes": [
       { 
           "player": "ok.ru", 
           "url": "https://ok.ru/videoembed/5381289871943" 
@@ -290,14 +299,16 @@ Wiadomość zwrotna
 ```
 # Kody zwrotne
 
-- 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 - 200 - Wszystko przeszło bez żadnego problemu.
 - 204 - Strona się załadowała, ale brakuje na niej odtwarzaczy (wbijam.pl).
+- 404 - Nie wspierana strona.
+- 400 - Brakuje jakichś parametrów.
+- 500 - Coś poszło nie tak, prawdopodobnie pakiet nie był w stanie, znaleźć określonego elementu na stronie, z którego pobiera informacje.
 
 # Wesprzyj
 <b>IMPORTANT</b>: Help me beeing efficient, please! I am developing in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information.
 
-[![ko-fi](https://buycoffee.to/logo/buycoffee.svg)](https://buycoffee.to/docchi)
+[![buycoffee.to](https://i.ibb.co/X8djLyj/Group-37.png)](https://buycoffee.to/docchi)
 
 # Licencja
 [MIT](https://github.com/docchipl/Pobieranie-anime-z-polskich-stron/blob/main/LICENSE)

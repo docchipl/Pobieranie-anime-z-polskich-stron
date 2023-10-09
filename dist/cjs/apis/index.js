@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WbijamAPI = exports.JuniorSubsAPI = exports.MakiSubsAPI = exports.MioroSubsAPI = exports.OrfeuszSubsAPI = exports.DocchiAPI = exports.FrixySubsAPI = void 0;
+var FrixySubs_js_1 = require("./FrixySubs.js");
+Object.defineProperty(exports, "FrixySubsAPI", { enumerable: true, get: function () { return __importDefault(FrixySubs_js_1).default; } });
+var Docchi_js_1 = require("./Docchi.js");
+Object.defineProperty(exports, "DocchiAPI", { enumerable: true, get: function () { return __importDefault(Docchi_js_1).default; } });
+var OrfeuszSubs_js_1 = require("./OrfeuszSubs.js");
+Object.defineProperty(exports, "OrfeuszSubsAPI", { enumerable: true, get: function () { return __importDefault(OrfeuszSubs_js_1).default; } });
+var MioroSubs_js_1 = require("./MioroSubs.js");
+Object.defineProperty(exports, "MioroSubsAPI", { enumerable: true, get: function () { return __importDefault(MioroSubs_js_1).default; } });
+var MakiSubs_js_1 = require("./MakiSubs.js");
+Object.defineProperty(exports, "MakiSubsAPI", { enumerable: true, get: function () { return __importDefault(MakiSubs_js_1).default; } });
+var JuniorSubs_js_1 = require("./JuniorSubs.js");
+Object.defineProperty(exports, "JuniorSubsAPI", { enumerable: true, get: function () { return __importDefault(JuniorSubs_js_1).default; } });
+var Wbijam_js_1 = require("./Wbijam.js");
+Object.defineProperty(exports, "WbijamAPI", { enumerable: true, get: function () { return __importDefault(Wbijam_js_1).default; } });
