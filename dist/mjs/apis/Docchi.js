@@ -20,6 +20,7 @@ export default async function Docchi(anime, episode) {
                 return {
                     player: x.player_hosting,
                     url: x.player,
+                    translator: x.translator_title.trim() === "" ? "none" : x.translator_title.trim()
                 };
             }),
             episode_next_url: Number(episode) + 1,
